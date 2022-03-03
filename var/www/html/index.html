@@ -1,37 +1,168 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-  <title>The Beer Men</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboStore</title>
 </head>
-
 <body>
-  <table width="100%">
-    <tr>
-      <th colspan="3"><a href="#">Robostore!</a></th>
-    </tr>
-    <tr>
-      <th bgcolor="grey">
-        <a href="#"><img src="../img/home.png" alt="Home" /></a>
-      </th>
-      <th bgcolor="grey" colspan="2">
-        <input type="text" placeholder="Search..." />
-      </th>
-      
-      <th bgcolor="grey"><a href="#"><img src="../img/cart-variant.png" alt="Your cart"></a></th>
-    </tr>
-    <tr>
-        <td bgcolor="gainsboro"><a href="#">Sensors</a></td>
-        <td bgcolor="gainsboro"><a href="#">Motors</a></td>
-        <td bgcolor="gainsboro"><a href="#">Microcontrollers</a></td>
-        <td bgcolor="gainsboro"><a href="#">Tools</a></td>
-    </tr>
-  </table>
-  <br><br>
-  <table width="100%">
-    <tr>
-      <td rowspan="2" bgcolor="gold">
-        <h1>A really cool product!</h1>
-      </td>
-    </tr>
-  </table>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr bgcolor='GoldenRod' height="55px"> 
+            <td width="5%">
+                <center><img src="https://freepikpsd.com/file/2019/10/217-2171720_icon-white-house-home-icon-white-png.png" width="25px" height="auto" padding="10px"></center>
+            </td>
+            <td width="35%"></td>
+            <td width="15%">
+                <table width="100%">
+                    <tr bgcolor="white" height="30px">
+                        <td>
+                            <input type="text" id='name' size='30' maxlength='30' align='middle' placeholder="Search product..." border="0">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="auto" align="right"><font color="white" face="Calibri" size="+3"></font></td>
+            <td width="5%"></td>
+        </tr>
+       
+
+    </table>
+    <table width="100%" cellspacing="15px">
+        <tr height="30px">
+            <td width="15%"></td>
+            <td width="15%" bgcolor='black'><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></td>
+            <td width="15%" bgcolor='black'><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></td>
+            <td width="15%" bgcolor='black'><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></td>
+            <td width="15%" bgcolor='black'><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></td>
+            <td width="15%"></td>
+        </tr>
+    </table>
+    <br>
+    <table width="80%">
+        <center><img src="https://static4.arrow.com/-/media/arrow/images/manufacturers/m/microchip-technology-logo-approved.jpg"width="auto" height="300px"></center>
+    </table>
+    <br>
+    <table width="100%">
+        <tr>
+            <td width="8%">
+
+            </td>
+            <td width="20%" valign="top">
+                
+                <h1><font face="Calibri">Filters</font></h1>
+                <br>
+                <label for="name">Maximum Price:</label>
+                <input type="text" id='name' size='10' maxlength='30' placeholder="Ex. 200$"><br><br>
+                <label for="language">Manufacturer: </label>
+                <select id='language'>
+                    <option>Dell</option>
+                    <option>Sony</option>
+                    <option>Apple</option>
+                    <option>Nvidia</option>
+                    <option>AMG</option>
+                </select>
+                <br><br>
+                <p>Ratings:</p>
+                <input type='radio' id="one" name="rev">
+                <label for='one'>1 star</label>
+                <br>
+                <input type='radio' id="two" name="rev">
+                <label for='two'>2 stars</label>
+                <br>
+                <input type='radio' id="three" name="rev">
+                <label for='three'>3 stars</label>
+                <br>
+                <input type='radio' id="four" name="rev">
+                <label for='four'>4 stars</label>
+                <br>
+                <input type='radio' id="five" name="rev">
+                <label for='five'>5 stars</label>
+               
+            </td>
+            <td width="1px" bgcolor="black" height="500px">
+
+            </td>
+            <td >
+                <table bgcolor="#C4C4C4" width="100%" cellspacing="25px">
+                    <tr height="100%">
+                        <td bgcolor="black" width="30%" valign="top">
+                            <img src="https://i5.walmartimages.com/asr/85d4e48b-9e16-401c-a09c-51ceee1e1cbc_1.74d2d3c9c8125b339c6f89c94dfcde9c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 1</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://www.hptuners.com/wp-content/uploads/2021/08/brp_product-e1628544019160.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 2</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://sc04.alicdn.com/kf/H55b75d1c2c504ba085de6140c1bac3ecb.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 3</strong></center></font></h1>
+                            <br>
+                        </td>
+
+                    </tr>
+                    <tr height="30px">
+                        
+                    </tr>
+                    <tr height="100%">
+                        <td bgcolor="black" width="30%" valign="top">
+                            <img src="https://i5.walmartimages.com/asr/85d4e48b-9e16-401c-a09c-51ceee1e1cbc_1.74d2d3c9c8125b339c6f89c94dfcde9c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 4</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://www.hptuners.com/wp-content/uploads/2021/08/brp_product-e1628544019160.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 5</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://sc04.alicdn.com/kf/H55b75d1c2c504ba085de6140c1bac3ecb.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 6</strong></center></font></h1>
+                            <br>
+                        </td>
+
+                    </tr>
+                    <tr height="30px">
+                        
+                    </tr>
+                    <tr height="100%">
+                        <td bgcolor="black" width="30%" valign="top">
+                            <img src="https://i5.walmartimages.com/asr/85d4e48b-9e16-401c-a09c-51ceee1e1cbc_1.74d2d3c9c8125b339c6f89c94dfcde9c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 7</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://www.hptuners.com/wp-content/uploads/2021/08/brp_product-e1628544019160.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 8</strong></center></font></h1>
+                            <br>
+                        </td>
+                        <td bgcolor="black" width="30%">
+                            <img src="https://sc04.alicdn.com/kf/H55b75d1c2c504ba085de6140c1bac3ecb.jpg" width="100%">
+                            <br>
+                            <h1><font color="white" face="Calibri"><center><strong>Product 9</strong></center></font></h1>
+                            <br>
+                        </td>
+
+                    </tr>
+                    
+                </table>
+                
+            </td>
+        
+
+        </tr>
+    </table>
+    
+    
 </body>
+</html>
