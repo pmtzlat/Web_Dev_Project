@@ -32,7 +32,6 @@
             <br /><br />
             <table>
                 <form action="/action_page.php" method="post">
-                <font face="Calibri" size="5">
                     <tr>
                         <!-- Left gutter -->
                         <td width=15%>
@@ -285,8 +284,33 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <label for="cardname"><font face="Calibri" size="4">Expiration Date</font></label><br />
-                                            <input type="text" name="cardname" size="40">
+                                            <label for="expiredate"><font face="Calibri" size="4">Expiration Date</font></label><br />
+                                            <select name="expiredatemonth" id="expiredatemonth">
+                                                <option value="JAN">01</option>
+                                                <option value="FEB">02</option>
+                                                <option value="MAR">03</option>
+                                                <option value="APR">04</option>
+                                                <option value="MAY">05</option>
+                                                <option value="JUN">06</option>
+                                                <option value="JUL">07</option>
+                                                <option value="AUG">08</option>
+                                                <option value="SEP">09</option>
+                                                <option value="OCT">10</option>
+                                                <option value="NOV">11</option>
+                                                <option value="DEC">12</option>
+                                            </select>
+                                            <select name="expiredateyear" id="expiredateyear">
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                                <option value="2031">2031</option>
+                                            </select>
                                         </td>
                                         <td>
                                             <label for="cvvcode"><font face="Calibri" size="4">CVV</font></label>
@@ -312,12 +336,23 @@
                                             <table>
                                                 <tr>
                                                     <td width="25%">
-                                                        <img src="https://i5.walmartimages.com/asr/85d4e48b-9e16-401c-a09c-51ceee1e1cbc_1.74d2d3c9c8125b339c6f89c94dfcde9c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" width="100" height="100">
+                                                        <img src="../img/ram-stick.jpeg" width="100" height="100">
                                                     </td>
                                                     <td>
                                                         <label for="item1"><font face="Calibri" size="4">Product 1</font></label><br />
                                                         <font face="Calibri" size="3">$99.99</font><br />
-
+                                                        <label for="item1quantity"><font face="Calibri" size="4">Quantity: </font></label>
+                                                        <select name="item1quantity" id="item1quantity">
+                                                            <option value="Q1">1</option>
+                                                            <option value="Q2">2</option>
+                                                            <option value="Q3">3</option>
+                                                            <option value="Q4">4</option>
+                                                            <option value="Q5">5</option>
+                                                            <option value="Q6">6</option>
+                                                            <option value="Q7">7</option>
+                                                            <option value="Q8">8</option>
+                                                            <option value="Q9">9</option>
+                                                        </select>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -358,7 +393,6 @@
                         <td width=15%>
                         </td>
                     </tr>
-                </font>
             </form>
             </table>
         </center>
