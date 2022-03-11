@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr bgcolor="GoldenRod" height="55px">
+        <td width="5%">
+          <center>
+            <a href="./index.html">
+              <img
+                src="../img/home.svg"
+                width="25px"
+                height="auto"
+                padding="10px"
+              />
+            </a>
+          </center>
+        </td>
+        <td width="35%"></td>
+        <td width="15%">
+          <table width="100%">
+            <tr bgcolor="white" height="30px">
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  size="30"
+                  maxlength="30"
+                  align="middle"
+                  placeholder="Search product..."
+                  border="0"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="auto" align="right">
+          <font color="white" face="Calibri" size="+3"></font>
+        </td>
+        <td width="5%">
+          <center>
+            <a href="./settings-account.html"
+              ><img src="../img/account-cog.svg" alt="Log in"
+            /></a>
+          </center>
+        </td>
+        <td width="5%">
+          <center>
+            <a href="./login.html"
+              ><img src="../img/account-circle.svg" alt="Log in"
+            /></a>
+          </center>
+        </td>
+        <td width="5%">
+          <center>
+            <a href="./cart.html"
+              ><img src="../img/cart.svg" alt="Cart"
+            /></a>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <table width="100%" cellspacing="15px">
+      <tr height="30px">
+        <td width="15%"></td>
+            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
+            <td width="15%"></td>
+      </tr>
+    </table>
+    <br />
+
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="5%"></td>
+          <td width="15%">
+            <table width="50%">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../img/account-circle.svg" />
+                  </td>
+                  <td>
+                    <p>john@doe.net</p>
+                  </td>
+                </tr>
+                <tr>
+                  <ul>
+                    <li>
+                      <a href="./settings-account.html">Account Settings</a>
+                    </li>
+                    <li><strong>Profile Settings</strong></li>
+                  </ul>
+                </tr>
+                <hr />
+              </tbody>
+            </table>
+          </td>
+          <td width="1px" bgcolor="black" height="500px"></td>
+          <td width="80%">
+            <h1>Hello, John Doe!</h1>
+            <h4>Profile Settings</h4>
+            <br />
+
+            <form>
+              <fieldset>
+                <legend>Appearance</legend>
+                <label for="name">Name</label><br />
+                <input type="text" id="name" placeholder="John Doe" /><br />
+                <label for="avatar">Display photo</label><br />
+                <input type="file" id="avatar" /><br /><br />
+                <input type="submit" name="Submit">
+              </fieldset>
+            </form>
+
+            <hr width="50%" align="left" />
+
+            <form>
+              <fieldset>
+                <legend>Shipping Address</legend>
+                <label for="address">Street Address</label><br />
+                <input
+                  type="text"
+                  id="address"
+                  placeholder="1600 Holloway Avenue"
+                /><br /><br />
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="San Francisco" />
+                <label for="state">State/Province</label>
+                <input
+                  type="text"
+                  size="2"
+                  id="state"
+                  placeholder="CA"
+                  maxlength="2"
+                /><br />
+                <label for="country">Country</label><br />
+                <input
+                  type="text"
+                  id="country"
+                  placeholder="United States"
+                  maxlength="56"
+                /><br />
+                <label for="zip">ZIP/Postal Code</label><br />
+                <input type="number" id="zip" placeholder="94132"><br /><br />
+                <input type="submit" name="Submit">
+              </fieldset>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

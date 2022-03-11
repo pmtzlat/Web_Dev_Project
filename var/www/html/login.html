@@ -38,7 +38,23 @@
         </td>
         <td width="5%">
           <center>
-            <a href="./cart.html"><img src="../img/cart.svg" alt="Cart" width="40px" height="auto" padding="10px" /></a>
+            <a href="./settings-account.html"
+              ><img src="../img/account-cog.svg" alt="Log in"
+            /></a>
+          </center>
+        </td>
+        <td width="5%">
+          <center>
+            <a href="./login.html"
+              ><img src="../img/account-circle.svg" alt="Log in"
+            /></a>
+          </center>
+        </td>
+        <td width="5%">
+          <center>
+            <a href="./cart.html"
+              ><img src="../img/cart.svg" alt="Cart"
+            /></a>
           </center>
         </td>
       </tr>
@@ -46,43 +62,42 @@
     <table width="100%" cellspacing="15px">
       <tr height="30px">
         <td width="15%"></td>
-        <td width="15%" bgcolor="black">
-          <font color="white" face="Calibri"
-            ><center><strong>Sensors</strong></center></font
-          >
-        </td>
-        <td width="15%" bgcolor="black">
-          <font color="white" face="Calibri"
-            ><center><strong>Motors</strong></center></font
-          >
-        </td>
-        <td width="15%" bgcolor="black">
-          <font color="white" face="Calibri"
-            ><center><strong>Microprocessors</strong></center></font
-          >
-        </td>
-        <td width="15%" bgcolor="black">
-          <font color="white" face="Calibri"
-            ><center><strong>Tools</strong></center></font
-          >
-        </td>
-        <td width="15%"></td>
+            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
+            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
+            <td width="15%"></td>
       </tr>
     </table>
     <br />
 
     <center>
-        <form>
-            <fieldset>
-                <legend>Sign in</legend>
-                <label for="email">Email</label><br />
-                <input type="text" id="text" /><br />
-                <label for="password">Password</label><br />
-                <input type="password" id="password" /><br>
-                <a href="#">Forgot your password?</a><br><br>
-                <input type="submit" name="Submit"><br>
-            </fieldset>
-        </form>
+      <form>
+        <fieldset>
+          <legend>Sign in</legend>
+          <label for="email">Email</label><br />
+          <input type="text" id="text" /><br />
+          <label for="password">Password</label><br />
+          <input type="password" id="password" /><br />
+          <a href="./password-reset.html">Forgot your password?</a><br /><br />
+          <input type="submit" name="Submit"/><br />
+        </fieldset>
+      </form>
+      <br />
+      <hr />
+      <br />
+      <form>
+        <fieldset>
+          <legend>Sign up</legend>
+          <label for="email">Email</label><br />
+          <input type="text" id="text" /><br />
+          <label for="password">Password</label><br />
+          <input type="password" id="password" /><br />
+          <label for="passwordconfirm">Confirm password</label><br />
+          <input type="password" id="passwordconfirm" /><br /><br />
+          <input type="submit" name="Submit" /><br />
+        </fieldset>
+      </form>
     </center>
   </body>
 </html>
