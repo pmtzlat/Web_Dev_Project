@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+.navbar{
+    background-color: goldenrod;
+    height: 55px;
+    margin:0;
+    padding: 0%;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.icon:hover{
+    background-color: white;
+    
+}
+
+.searchbar{
+    outline:none;
+    width: 100%;
+    padding: 3px 15px;
+    height:25px;
+    margin:0;
+    border:2px;
+    border-color:goldenrod;
+    border-radius: 4px;
+    font-family: Calibri;
+    font-weight: bold;
+    text-align: center;
+}
+
+.categories{
+    margin-top:50px;
+    width:100%;
+    background-color:white;
+}
+.category_button{
+    background-color:black;
+    border-radius:4px;
+    font-family: Montserrat;
+    border-width: 0;
+    
+}
+
+.category_button:hover{
+    background-color: lightgrey;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover{
+    color:black;
+    font-weight: bold;
+}
