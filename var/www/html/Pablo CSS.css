@@ -45,16 +45,22 @@ body{
     border-radius:4px;
     font-family: Montserrat;
     border-width: 0;
+    color:white;
+
     
 }
 
 .category_button:hover{
     background-color: lightgrey;
+    color:black;
+    font-weight: bold;
 }
 
 a{
     text-decoration: none;
     color:white;
+    height:100%;
+    weight:100px;
 }
 
 a:hover{
