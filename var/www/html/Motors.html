@@ -4,99 +4,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motors</title>
+    <link rel="stylesheet" href="./Pablo CSS.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 <body>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr bgcolor="GoldenRod" height="55px">
-          <td width="5%">
-            <center>
-              <a href="./index.html">
-                <img
-                  src="../img/home.svg"
-                  width="25px"
-                  height="auto"
-                  padding="10px"
-                />
-              </a>
-            </center>
-          </td>
-          <td width="35%"></td>
-          <td width="15%">
-            <table width="100%">
-              <tr bgcolor="white" height="30px">
-                <td>
-                  <input
-                    type="text"
-                    id="name"
-                    size="30"
-                    maxlength="30"
-                    align="middle"
-                    placeholder="Search product..."
-                    border="0"
-                  />
+    <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./index.html">
+                        <img
+                        src="../img/home.svg"
+                        width="25px"
+                        height="auto"
+                        padding="10px"
+                        />
+                    </a>
+                    </center>
                 </td>
-              </tr>
-            </table>
-          </td>
-          <td width="auto" align="right">
-            <font color="white" face="Calibri" size="+3"></font>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./settings-account.html"
-                ><img src="../img/account-cog.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./login.html"
-                ><img src="../img/account-circle.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./cart.html"
-                ><img src="../img/cart.svg" alt="Cart"
-              /></a>
-            </center>
-          </td>
+                <td width="29%"></td>
+                <td width="30%">
+                    <table width="100%">
+                    <tr height="30px">
+                        <td>
+                        <input class="searchbar"
+                            type="text"
+                            id="name"
+                            size="30"
+                            maxlength="30"
+                            align="middle"
+                            placeholder="Search product..."
+                            border="0"
+                        />
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td width="auto" align="right">
+                    
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./settings-account.html"
+                        ><img src="../img/account-cog.svg" alt="Log in"
+                    /></a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./login.html"
+                        ><img src="../img/account-circle.svg" alt="Log in"
+                    /></a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./cart.html"
+                        ><img src="../img/cart.svg" alt="Cart"
+                    /></a>
+                    </center>
+                </td>
+            
         </tr>
-      </table>
-       
+    
 
-    </tbody></table>
-    <table width="100%" cellspacing="15px">
+    </tbody>
+    </table>
+ 
+    <table class="categories" cellspacing="15px ">
         <tbody><tr height="30px">
-          <td width="15%"></td>
-          <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
-          <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
-          <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
-          <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
-          <td width="15%"></td>
+            <td width="15%"></td>
+            <td class="category_button" width="15%"> <a href="Sensors.html"><center>Sensors</center></td></a>
+            <td class="category_button" width="15%"><a href="Motors.html"><center>Motors</center></td></a>
+            <td class="category_button" width="15%"><a href="Microprocessors.html"><center>Microprocessors</center></td></a>
+            <td class="category_button" width="15%"><a href="Tools.html"><center>Tools</center></td></a>
+            <td width="15%"></td>
         </tr>
     </tbody></table>
     <br>
     <center><img src="../img/logo.JPG" width="auto" height="100px"></center><table width="80%">
     <br>
-    <h1><center><strong><font face="calibri" size="+5">Motors</font></strong></center></h1>
+    <h1><center><strong><font face="Montserrat" size="+5">Motors</font></strong></center></h1>
         
     </table>
     <br>
-    <table width="100%">
+    <table width="100%" class="font">
         <tbody><tr>
-            <td width="2%">
+            <td width="6%">
 
             </td>
-            <td width="15%" valign="top">
+            <td width="20%" valign="top">
                 
-                <h1><font face="Calibri">Filters</font></h1>
+                <h1 class="font">Filters</h1>
                 <br>
                 <label for="name">Maximum Price:</label>
-                <input type="text" id="name" size="10" maxlength="30" placeholder="Ex. 200$"><br><br>
+                <input class="forminput" type="text" id="name" size="10" maxlength="30" placeholder="Ex. $200" style="margin-left:12px;width:60px"><br><br>
                 <label for="language">Manufacturer: </label>
-                <select id="language">
+                <select class="forminput" id="language" style="margin-left:30px">
                     <option>Dell</option>
                     <option>Sony</option>
                     <option>Apple</option>
@@ -136,107 +141,115 @@
 
             </td>
             <td>
-              <table bgcolor="#C4C4C4" width="100%" cellspacing="25px">
-                <tbody><tr height="100%" valign="top">
-                    <td bgcolor="black" width="30%" valign="top">
-                        <br>
-                        <center><img src="https://m.media-amazon.com/images/I/61NXZU-kcaL._SL1200_.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_M27-150-P Motor.html"><font color="white" face="Calibri" size="+3"><strong>M27-150-P Motor</strong></font></a>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                <table bgcolor="#F6F6F6" width="100%" cellspacing="25px" style="border-radius:0 20px 20px 0">
+                    <tbody><tr height="100%" valign="top">
+                        <td  class="product_card" bgcolor="black" width="30%" valign="top"><a href="./product/product_M27-150-P Motor.html">
                             
-                        </tbody></table>
-                        <br>
-                    </td>
-                    <td bgcolor="black" width="30%" valign="top">
-                        <br>
-                        <center><img src="https://www.ampflow.com/controllers/vex/HV.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="2%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_Victor BB Motor Controller.html"><font color="white" face="Calibri" size="+3"><strong>Victor BB Motor Controller</strong></font></a>
-                                </td>
-                                <td width="10%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                            <center><img  class="product_pic" src="https://m.media-amazon.com/images/I/61NXZU-kcaL._SL1200_.jpg" width="90%"></center>
                             
-                        </tbody></table><br>
-                    </td>
-                    <td bgcolor="black" width="30%">
-                        <br>
-                        <center><img src="https://cdn11.bigcommerce.com/s-eem7ijc77k/images/stencil/original/products/1652/25581/IMC410__72335.1577981496.jpg?c=2" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="2%">
+                            <table>
+                                <tbody><tr>
+                                    <td width="5%">
 
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_Solo 60 Motor Controller.html"><font color="white" face="Calibri" size="+3"><strong>Solo 60 Motor Controller</strong></font></a>
-                                </td>
-                                <td width="10%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
+                                    </td>
+                                    <td width="30%">
+                                        <strong>M27-150-P Motor</strong></a>
+                                    </td>
+                                    <td width="5%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
 
-                                </td>
-                                <td valign="top">
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            <br>
+                        </td></a>
+                        <td  class="product_card" bgcolor="black" width="30%" valign="top"><a href="./product/product_Victor BB Motor Controller.html">
                             
-                        </tbody></table><br>
-                    </td>
+                            <center><img  class="product_pic" src="https://www.ampflow.com/controllers/vex/HV.jpg" width="90%"></center>
+                            
+                            <table>
+                                <tbody><tr>
+                                    <td width="2%">
 
-                </tr>
-                <tr height="30px">
+                                    </td>
+                                    <td width="30%">
+                                        <strong>Victor BB Motor Controller</strong>
+                                    </td>
+                                    <td width="10%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table><br>
+                        </td></a>
+                        <td  class="product_card" bgcolor="black" width="30%"><a href="./product/product_Solo 60 Motor Controller.html">
+                            
+                            <center><img  class="product_pic" src="https://cdn11.bigcommerce.com/s-eem7ijc77k/images/stencil/original/products/1652/25581/IMC410__72335.1577981496.jpg?c=2" width="90%"></center>
+                            
+                            <table>
+                                <tbody><tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td width="30%">
+                                        <strong>Solo 60 Motor Controller</strong>
+                                    </td>
+                                    <td width="10%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td valign="top">
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table><br>
+                        </td></a>
+
+                    </tr>
                     
+                </tbody></table>
                 
+            </td>
+            <td width="5%" height="100%">
+                <img src="../img/banner-ad.png" width="100%">
+            </td>
+        
+
+        </tr>
     </tbody></table>
-    <center><table>
+    <center><table class="font">
         <tbody><tr height="150px">
             <td></td>
         </tr>
         <tr>
             <td width="30%">
                 <center><a href="../html/aboutme.html"><h1><font face="Calibri" size="+3" color="GoldenRod"><strong>About us</strong></font></h1></a></center>
-                <center><a href="../html/faq.html">FAQ</a></center>
+                <center><a href="../html/faq.html" style="margin:20px;font-size:20">FAQ</a></center>
+                <br>
                 <center>Copyright RoboStore©2016</center>
             </td>
         </tr>
