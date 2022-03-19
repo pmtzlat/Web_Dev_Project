@@ -58,9 +58,9 @@ body{
 
 a{
     text-decoration: none;
+    color:white;
 }
 .categories a{
-    color:white;
     height:100%;
     weight:100px;
 }
@@ -166,4 +166,20 @@ div:first-of-type {
   .product_card a:hover{
     color:black;
     
+}
+
+.addtocart{
+    color:white;
+    font-weight:bold;
+    border-radius:10px;
+    padding: 10px;
+    margin:20px;
+}
+
+
+
+.addtocart:hover{
+    padding:15px;
+    width:100%;
+    margin:0px;
 }
