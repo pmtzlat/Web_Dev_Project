@@ -58,12 +58,14 @@ body{
 
 a{
     text-decoration: none;
+}
+.categories a{
     color:white;
     height:100%;
     weight:100px;
 }
 
-a:hover{
+.categories a:hover{
     color:black;
     font-weight: bold;
 }
@@ -135,3 +137,33 @@ div:first-of-type {
     color: black;
     outline: 1px solid black;
   }
+
+  .product_card{
+      border-radius:10px;
+      padding:10px;
+      background-color: black;
+      color:white;
+     
+  }
+
+  .product_card:hover{
+      border-color:black;
+      border-width: 10px;
+      background-color: lightgray;
+      color:black
+  }
+
+  .product_pic{
+      border-radius:2px;
+      margin:10px
+  }
+
+  .product_card a{
+      color:white;
+
+  }
+
+  .product_card a:hover{
+    color:black;
+    
+}
