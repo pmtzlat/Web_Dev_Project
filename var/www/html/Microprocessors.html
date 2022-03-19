@@ -4,99 +4,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microprocessors</title>
+    <link rel="stylesheet" href="./Pablo CSS.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 <body>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr bgcolor="GoldenRod" height="55px">
-          <td width="5%">
-            <center>
-              <a href="./index.html">
-                <img
-                  src="../img/home.svg"
-                  width="25px"
-                  height="auto"
-                  padding="10px"
-                />
-              </a>
-            </center>
-          </td>
-          <td width="35%"></td>
-          <td width="15%">
-            <table width="100%">
-              <tr bgcolor="white" height="30px">
-                <td>
-                  <input
-                    type="text"
-                    id="name"
-                    size="30"
-                    maxlength="30"
-                    align="middle"
-                    placeholder="Search product..."
-                    border="0"
-                  />
+    <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./index.html">
+                        <img
+                        src="../img/home.svg"
+                        width="25px"
+                        height="auto"
+                        padding="10px"
+                        />
+                    </a>
+                    </center>
                 </td>
-              </tr>
-            </table>
-          </td>
-          <td width="auto" align="right">
-            <font color="white" face="Calibri" size="+3"></font>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./settings-account.html"
-                ><img src="../img/account-cog.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./login.html"
-                ><img src="../img/account-circle.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./cart.html"
-                ><img src="../img/cart.svg" alt="Cart"
-              /></a>
-            </center>
-          </td>
+                <td width="29%"></td>
+                <td width="30%">
+                    <table width="100%">
+                    <tr height="30px">
+                        <td>
+                        <input class="searchbar"
+                            type="text"
+                            id="name"
+                            size="30"
+                            maxlength="30"
+                            align="middle"
+                            placeholder="Search product..."
+                            border="0"
+                        />
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td width="auto" align="right">
+                    
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./settings-account.html"
+                        ><img src="../img/account-cog.svg" alt="Log in"
+                    /></a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./login.html"
+                        ><img src="../img/account-circle.svg" alt="Log in"
+                    /></a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./cart.html"
+                        ><img src="../img/cart.svg" alt="Cart"
+                    /></a>
+                    </center>
+                </td>
+            
         </tr>
-      </table>
-       
+    
 
-    </tbody></table>
-    <table width="100%" cellspacing="15px">
+    </tbody>
+    </table>
+ 
+    <table class="categories" cellspacing="15px ">
         <tbody><tr height="30px">
             <td width="15%"></td>
-            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
+            <td class="category_button" width="15%"> <a href="Sensors.html"><center>Sensors</center></td></a>
+            <td class="category_button" width="15%"><a href="Motors.html"><center>Motors</center></td></a>
+            <td class="category_button" width="15%"><a href="Microprocessors.html"><center>Microprocessors</center></td></a>
+            <td class="category_button" width="15%"><a href="Tools.html"><center>Tools</center></td></a>
             <td width="15%"></td>
         </tr>
     </tbody></table>
     <br>
     <center><img src="../img/logo.JPG" width="auto" height="100px"></center><table width="80%">
     <br>
-    <h1><center><strong><font face="calibri" size="+5">Microprocessors</font></strong></center></h1>
+    <h1><center><strong><font face="Montserrat" size="+5">Microprocessors</font></strong></center></h1>
         
     </table>
     <br>
-    <table width="100%">
+    <table width="100%" class="font">
         <tbody><tr>
-            <td width="2%">
+            <td width="4%">
 
             </td>
-            <td width="15%" valign="top">
+            <td width="20%" valign="top">
                 
-                <h1><font face="Calibri">Filters</font></h1>
+                <h1 class="font">Filters</h1>
                 <br>
                 <label for="name">Maximum Price:</label>
-                <input type="text" id="name" size="10" maxlength="30" placeholder="Ex. 200$"><br><br>
+                <input class="forminput" type="text" id="name" size="10" maxlength="30" placeholder="Ex. $200" style="margin-left:12px;width:60px"><br><br>
                 <label for="language">Manufacturer: </label>
-                <select id="language">
+                <select class="forminput" id="language" style="margin-left:30px">
                     <option>Dell</option>
                     <option>Sony</option>
                     <option>Apple</option>
@@ -136,165 +141,167 @@
 
             </td>
             <td>
-              <table bgcolor="#C4C4C4" width="100%" cellspacing="25px">
-                <tbody><tr height="100%" valign="top">
-                    <td bgcolor="black" width="30%" valign="top" ">
-                        <br>
-                        <center><img src="https://cdn.sparkfun.com/r/500-500/assets/parts/1/4/0/2/2/15447-Raspberry_Pi_4_Model_B__4_GB_-01.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_4 GB Raspberry Pi 4.html"><font color="white" face="Calibri" size="+3"><strong>4 GB Raspberry Pi 4</strong></font></a>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                <table bgcolor="#F6F6F6" width="100%" cellspacing="25px" style="border-radius:0 20px 20px 0">
+                    <tbody><tr height="100%" valign="top">
+                        <td class="product_card" width="30%" valign="top"><a href="./product/product_4 GB Raspberry Pi 4.html">
                             
-                        </tbody></table>
+                            <center><img  class="product_pic" src="https://cdn.sparkfun.com/r/500-500/assets/parts/1/4/0/2/2/15447-Raspberry_Pi_4_Model_B__4_GB_-01.jpg" width="90%"></center>
+                            
+                            <table >
+                                <tbody><tr>
+                                    <td width="5%">
+
+                                    </td>
+                                    <td width="30%">
+                                       <strong>4 GB Raspberry Pi 4</strong>
+                                    </td>
+                                    <td width="5%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            
+                            <br>
+                        </td></a>
+                        <td class="product_card" bgcolor="black" width="30%"><a href="./product/product_Arduino starter kit.html">
+                            
+                            <center><img class="product_pic" src="https://m.media-amazon.com/images/I/818V0uRvnrL._AC_SL1500_.jpg" width="90%" style="margin-bottom:40px"></center>
+                            
+                            <table>
+                                <tbody><tr>
+                                    <td width="5%">
+
+                                    </td>
+                                    <td width="30%">
+                                        <strong>Arduino Starter Kit</strong>
+                                    </td>
+                                    <td width="5%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            <br>
+                        </td></a>
+                        <td  class="product_card" bgcolor="black" width="30%"><a href="./product/product_Arduino Nano.html">
+                            
+                            <center><img  class="product_pic" src="https://www.twinschip.com/image/cache/catalog/Products%20Twins%20Chip%20Store%202020/DEVELOPER%20BOARDS/Arduino/Arduino%20Nano%20V3.0/Arduino%20Nano%20V3.0%20Twins%20Chip%201-425x425.jpg" width="90%" ></center>
+                            
+                            <table>
+                                <tbody><tr>
+                                    <td width="5%">
+
+                                    </td>
+                                    <td width="30%">
+                                        <strong>Arduino Nano</strong>
+                                    </td>
+                                    <td width="5%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            <br>
+                        </td></a>
+
+                    </tr>
+                    <tr height="30px">
                         
-                        <br>
-                    </td>
-                    <td bgcolor="black" width="30%">
-                        <br>
-                        <center><img src="https://m.media-amazon.com/images/I/818V0uRvnrL._AC_SL1500_.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_Arduino starter kit.html"><font color="white" face="Calibri" size="+3"><strong>Arduino Starter Kit</strong></font></a>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                    </tr>
+                    <tr height="100%">
+                        <td  class="product_card" bgcolor="black" width="30%" valign="top"><a href="./product/product_RP4020 Microcontroller Kit.html">
                             
-                        </tbody></table>
-                        <br>
-                    </td>
-                    <td bgcolor="black" width="30%">
-                        <br>
-                        <center><img src="https://www.twinschip.com/image/cache/catalog/Products%20Twins%20Chip%20Store%202020/DEVELOPER%20BOARDS/Arduino/Arduino%20Nano%20V3.0/Arduino%20Nano%20V3.0%20Twins%20Chip%201-425x425.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_Arduino Nano.html"><font color="white" face="Calibri" size="+3"><strong>Arduino Nano</strong></font></a>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
+                            <center><img  class="product_pic" src="https://www.raspberrypi.org/app/uploads/2021/01/17717-SparkFun-Pro-Micro-RP2040-01-500x500.jpg" width="90%"></center>
                             
-                        </tbody></table>
-                        <br>
-                    </td>
+                            <table>
+                                <tbody><tr>
+                                    <td width="5%">
 
-                </tr>
-                <tr height="30px">
+                                    </td>
+                                    <td width="15%">
+                                        <strong>RP4020 Microcontroller Kit</strong>
+                                    </td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            <br>
+                        </td></a>
+                        <td  class="product_card" bgcolor="black" width="30%"><a href="./product/product_iFlight Beast F7 Drone Controller Board.html">
+                            
+                            <center><img  class="product_pic" src="https://images-na.ssl-images-amazon.com/images/I/41hEKfbBpxL.jpg" width="90%"></center>
+                            
+                            <table>
+                                <tbody><tr>
+                                    <td width="5%">
+
+                                    </td>
+                                    <td width="30%">
+                                        <strong>iFlight Beast F7 Drone Controller
+                                            Board</strong>
+                                    </td>
+                                    <td width="5%"></td>
+                                    <td width="10%">
+                                        <h1><font face="Calibri"><strong>$20</strong></font></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+
+                                    </td>
+                                    <td>
+                                        <img src="../img/stars.png" width="100%">
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                            <br>
+                        </td></a>
+                       
+
+                    </tr>
                     
-                </tr>
-                <tr height="100%">
-                    <td bgcolor="black" width="30%" valign="top">
-                        <br>
-                        <center><img src="https://www.raspberrypi.org/app/uploads/2021/01/17717-SparkFun-Pro-Micro-RP2040-01-500x500.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="15%">
-                                    <a href="./product/product_RP4020 Microcontroller Kit.html"><font color="white" face="Calibri" size="+3"><strong>RP4020 Microcontroller Kit</strong></font></a>
-                                </td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
-                            
-                        </tbody></table>
-                        <br>
-                    </td>
-                    <td bgcolor="black" width="30%">
-                        <br>
-                        <center><img src="https://images-na.ssl-images-amazon.com/images/I/41hEKfbBpxL.jpg" width="90%"></center>
-                        <br>
-                        <table>
-                            <tbody><tr>
-                                <td width="5%">
-
-                                </td>
-                                <td width="30%">
-                                    <a href="./product/product_iFlight Beast F7 Drone Controller Board.html"><font color="white" face="Calibri" size="+3"><strong>iFlight Beast F7 Drone Controller
-                                        Board</strong></font></a>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="10%">
-                                    <h1><font color="white" face="Calibri"><strong>$20</strong></font></h1>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="2%">
-
-                                </td>
-                                <td>
-                                    <img src="../img/stars.png" width="100%">
-                                </td>
-                            </tr>
-                            
-                        </tbody></table>
-                        <br>
-                    </td>
                     
-
-                
-                
-            </tbody></table>
+                    
+                </tbody></table>
                 
             </td>
             <td width="10%" height="100%">
