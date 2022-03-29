@@ -16,6 +16,10 @@
     background-color: aliceblue;
 }
 
+.hln-logo {
+    border-radius: 30%;
+}
+
 .hln-logo-sm {
     border-radius: 20%;
 }

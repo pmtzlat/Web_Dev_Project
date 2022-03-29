@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
+    <link rel="stylesheet" href="../css/Pablo CSS.css"/>
+    <link rel="stylesheet" href="../css/Ethan-Settings.css"/>
+    <link rel="stylesheet" href="../css/Ethan.css"/>
   </head>
-  <body>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-      <tr bgcolor="GoldenRod" height="55px">
-        <td width="5%">
+  <body class="hln-background">
+    <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td class="icon" width="5%">
           <center>
             <a href="./index.html">
-              <img
-                src="../img/home.svg"
-                width="25px"
-                height="auto"
-                padding="10px"
+            <img
+              src="../img/home.svg"
+              width="25px"
+              height="auto"
+              padding="10px"
               />
             </a>
           </center>
         </td>
-        <td width="35%"></td>
-        <td width="15%">
+        <td width="29%"></td>
+        <td width="30%">
           <table width="100%">
-            <tr bgcolor="white" height="30px">
+            <tr height="30px">
               <td>
-                <input
+                <input class="searchbar"
                   type="text"
                   id="name"
                   size="30"
@@ -34,53 +37,70 @@
                   align="middle"
                   placeholder="Search product..."
                   border="0"
-                />
+                  />
               </td>
             </tr>
           </table>
         </td>
-        <td width="auto" align="right">
-          <font color="white" face="Calibri" size="+3"></font>
-        </td>
-        <td width="5%">
+        <td width="auto" align="right"></td>
+        <td class="icon" width="5%">
           <center>
-            <a href="./settings-account.html"
-              ><img src="../img/account-cog.svg" alt="Log in"
-            /></a>
+            <a href="./settings-account.html">
+            <img src="../img/account-cog.svg" alt="Log in"/>
+            </a>
           </center>
         </td>
-        <td width="5%">
+        <td class="icon" width="5%">
           <center>
-            <a href="./login.html"
-              ><img src="../img/account-circle.svg" alt="Log in"
-            /></a>
+            <a href="./login.html">
+            <img src="../img/account-circle.svg" alt="Log in"/>
+            </a>
           </center>
         </td>
-        <td width="5%">
+        <td class="icon" width="5%">
           <center>
-            <a href="./cart.html"
-              ><img src="../img/cart.svg" alt="Cart"
-            /></a>
+            <a href="./cart.html">
+            <img src="../img/cart.svg" alt="Cart"/>
+            </a>
           </center>
         </td>
       </tr>
+      </tbody>
     </table>
-    <table width="100%" cellspacing="15px">
-      <tr height="30px">
-        <td width="15%"></td>
-            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
-            <td width="15%"></td>
-      </tr>
+    <table class="categories hln-background" cellspacing="15px ">
+      <tbody>
+        <tr height="30px">
+          <td width="15%"></td>
+          <td class="category_button" width="15%">
+            <a href="Sensors.html">
+              <center class="category-no-fontfamily">Sensors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a href="Motors.html">
+              <center class="category-no-fontfamily">Motors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a  href="Microprocessors.html">
+              <center class="category-no-fontfamily">Microprocessors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a href="Tools.html">
+              <center class="category-no-fontfamily">Tools</center>
+          </td>
+          </a>
+          <td width="15%"></td>
+        </tr>
+      </tbody>
     </table>
-    <br />
+    <br>
 
     <table width="100%">
       <tbody>
         <tr>
-          <td width="5%"></td>
+          <td width="25%"></td>
           <td width="15%">
             <table width="50%">
               <tbody>
@@ -95,7 +115,7 @@
                 <tr>
                   <ul>
                     <li>
-                      <a href="./settings-account.html">Account Settings</a>
+                      <a class="hln-link" href="./settings-account.html">Account Settings</a>
                     </li>
                     <li><strong>Profile Settings</strong></li>
                   </ul>
@@ -105,7 +125,8 @@
             </table>
           </td>
           <td width="1px" bgcolor="black" height="500px"></td>
-          <td width="80%">
+          <td width="10px"></td>
+          <td>
             <h1>Hello, John Doe!</h1>
             <h4>Profile Settings</h4>
             <br />
