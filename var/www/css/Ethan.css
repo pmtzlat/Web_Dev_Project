@@ -15,3 +15,7 @@
 .hln-background {
     background-color: aliceblue;
 }
+
+.hln-logo-sm {
+    border-radius: 20%;
+}
