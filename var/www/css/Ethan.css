@@ -1,0 +1,17 @@
+.hln-input {
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0% !important;
+}
+
+.hln-link {
+    color: dodgerblue;
+}
+
+.hln-fieldset {
+    width: 50%;
+}
+
+.hln-background {
+    background-color: aliceblue;
+}

@@ -4,23 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/Pablo CSS.css"/>
+    <link rel="stylesheet" href="../css/Ethan.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Login</title>
-    </head>
+  </head>
 
-  <body>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-      <tr bgcolor="GoldenRod" height="55px">
-        <td width="5%">
+  <body class="hln-background">
+    <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td class="icon" width="5%">
           <center>
-            <a href="./index.html"><img src="../img/home.svg" alt="Home" width="40px" height="auto" padding="10px"></a>
+            <a href="./index.html">
+            <img
+              src="../img/home.svg"
+              width="25px"
+              height="auto"
+              padding="10px"
+              />
+            </a>
           </center>
         </td>
-        <td width="35%"></td>
-        <td width="15%">
+        <td width="29%"></td>
+        <td width="30%">
           <table width="100%">
-            <tr bgcolor="white" height="30px">
+            <tr height="30px">
               <td>
-                <input
+                <input class="searchbar"
                   type="text"
                   id="name"
                   size="30"
@@ -28,74 +38,90 @@
                   align="middle"
                   placeholder="Search product..."
                   border="0"
-                />
+                  />
               </td>
             </tr>
           </table>
         </td>
-        <td width="auto" align="right">
-          <font color="white" face="Calibri" size="+3"></font>
-        </td>
-        <td width="5%">
+        <td width="auto" align="right"></td>
+        <td class="icon" width="5%">
           <center>
-            <a href="./settings-account.html"
-              ><img src="../img/account-cog.svg" alt="Log in"
-            /></a>
+            <a href="./settings-account.html">
+            <img src="../img/account-cog.svg" alt="Log in"/>
+            </a>
           </center>
         </td>
-        <td width="5%">
+        <td class="icon" width="5%">
           <center>
-            <a href="./login.html"
-              ><img src="../img/account-circle.svg" alt="Log in"
-            /></a>
+            <a href="./login.html">
+            <img src="../img/account-circle.svg" alt="Log in"/>
+            </a>
           </center>
         </td>
-        <td width="5%">
+        <td class="icon" width="5%">
           <center>
-            <a href="./cart.html"
-              ><img src="../img/cart.svg" alt="Cart"
-            /></a>
+            <a href="./cart.html">
+            <img src="../img/cart.svg" alt="Cart"/>
+            </a>
           </center>
         </td>
       </tr>
+      </tbody>
     </table>
-    <table width="100%" cellspacing="15px">
-      <tr height="30px">
-        <td width="15%"></td>
-            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
-            <td width="15%"></td>
-      </tr>
+    <table class="categories hln-background" cellspacing="15px ">
+      <tbody>
+        <tr height="30px">
+          <td width="15%"></td>
+          <td class="category_button" width="15%">
+            <a href="Sensors.html">
+              <center>Sensors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a href="Motors.html">
+              <center>Motors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a href="Microprocessors.html">
+              <center>Microprocessors</center>
+          </td>
+          </a>
+          <td class="category_button" width="15%">
+            <a href="Tools.html">
+              <center>Tools</center>
+          </td>
+          </a>
+          <td width="15%"></td>
+        </tr>
+      </tbody>
     </table>
-    <br />
-
+    <br>
     <center>
       <form>
-        <fieldset>
+        <fieldset class="hln-fieldset">
           <legend>Sign in</legend>
           <label for="email">Email</label><br />
-          <input type="text" id="text" /><br />
+          <input class="hln-input" type="text" id="text" /><br />
           <label for="password">Password</label><br />
-          <input type="password" id="password" /><br />
-          <a href="./password-reset.html">Forgot your password?</a><br /><br />
-          <input type="submit" name="Submit"/><br />
+          <input class="hln-input" type="password" id="password" /><br />
+          <a class="hln-link" href="./password-reset.html">Forgot your password?</a><br /><br />
+          <input class="hln-input" type="submit" name="Submit"/><br />
         </fieldset>
       </form>
       <br />
-      <hr />
+      <hr style="width: 50%"/>
       <br />
       <form>
-        <fieldset>
+        <fieldset class="hln-fieldset">
           <legend>Sign up</legend>
           <label for="email">Email</label><br />
-          <input type="text" id="text" /><br />
+          <input class="hln-input" type="text" id="text" /><br />
           <label for="password">Password</label><br />
-          <input type="password" id="password" /><br />
+          <input class="hln-input" type="password" id="password" /><br />
           <label for="passwordconfirm">Confirm password</label><br />
-          <input type="password" id="passwordconfirm" /><br /><br />
-          <input type="submit" name="Submit" /><br />
+          <input class="hln-input" type="password" id="passwordconfirm" /><br /><br />
+          <input class="hln-input" type="submit" name="Submit" /><br />
         </fieldset>
       </form>
     </center>
