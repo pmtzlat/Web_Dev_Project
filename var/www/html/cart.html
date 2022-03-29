@@ -3,80 +3,80 @@
 
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="./Pablo CSS.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <title>Cart</title>
     </head>
 
     <body>
-      <font face="Calibri">
-      <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr bgcolor="GoldenRod" height="55px">
-          <td width="5%">
-            <center>
-              <a href="./index.html">
-                <img
-                  src="../img/home.svg"
-                  width="25px"
-                  height="auto"
-                  padding="10px"
-                />
-              </a>
-            </center>
-          </td>
-          <td width="35%"></td>
-          <td width="15%">
-            <table width="100%">
-              <tr bgcolor="white" height="30px">
-                <td>
-                  <input
-                    type="text"
-                    id="name"
-                    size="30"
-                    maxlength="30"
-                    align="middle"
-                    placeholder="Search product..."
-                    border="0"
-                  />
+      <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td class="icon" width="5%">
+                <center>
+                    <a href="./index.html">
+                    <img
+                        src="../img/home.svg"
+                        width="25px"
+                        height="auto"
+                        padding="10px"
+                        />
+                    </a>
+                </center>
+            </td>
+            <td width="29%"></td>
+                <td width="30%">
+                    <table width="100%">
+                        <tr height="30px">
+                            <td>
+                                <input class="searchbar"
+                                    type="text"
+                                    id="name"
+                                    size="30"
+                                    maxlength="30"
+                                    align="middle"
+                                    placeholder="Search product..."
+                                    border="0"
+                                />
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-              </tr>
-            </table>
-          </td>
-          <td width="auto" align="right">
-            <font color="white" face="Calibri" size="+3"></font>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./settings-account.html"
-                ><img src="../img/account-cog.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./login.html"
-                ><img src="../img/account-circle.svg" alt="Log in"
-              /></a>
-            </center>
-          </td>
-          <td width="5%">
-            <center>
-              <a href="./cart.html"
-                ><img src="../img/cart.svg" alt="Cart"
-              /></a>
-            </center>
-          </td>
-        </tr>
-      </table>
-      <table width="100%" cellspacing="15px">
-        <tr height="30px">
-          <td width="15%"></td>
-            <td width="15%" bgcolor="black"><a href="Sensors.html"><font color="white" face="Calibri"><center><strong>Sensors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Motors.html"><font color="white" face="Calibri"><center><strong>Motors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Microprocessors.html"><font color="white" face="Calibri"><center><strong>Microprocessors</strong></center></font></a></td>
-            <td width="15%" bgcolor="black"><a href="Tools.html"><font color="white" face="Calibri"><center><strong>Tools</strong></center></font></a></td>
+                <td width="auto" align="right"></td>
+                <td class="icon" width="5%">
+                    <center>
+                    <a href="./settings-account.html">
+                        <img src="../img/account-cog.svg" alt="Log in"/>
+                    </a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                        <a href="./login.html">
+                            <img src="../img/account-circle.svg" alt="Log in"/>
+                        </a>
+                    </center>
+                </td>
+                <td class="icon" width="5%">
+                    <center>
+                        <a href="./cart.html">
+                            <img src="../img/cart.svg" alt="Cart"/>
+                        </a>
+                    </center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     
+    <table class="categories" cellspacing="15px ">
+        <tbody><tr height="30px">
             <td width="15%"></td>
-          <td width="15%"></td>
+            <td class="category_button" width="15%"> <a href="Sensors.html"><center>Sensors</center></td></a>
+            <td class="category_button" width="15%"><a href="Motors.html"><center>Motors</center></td></a>
+            <td class="category_button" width="15%"><a href="Microprocessors.html"><center>Microprocessors</center></td></a>
+            <td class="category_button" width="15%"><a href="Tools.html"><center>Tools</center></td></a>
+            <td width="15%"></td>
         </tr>
-      </table>
+    </tbody></table>
       <br />
         <table width="100%">
           <tr>
@@ -168,7 +168,7 @@
                         <font face="Calibri" size="5">Subtotal: $258.88</font>
                       </h6>
                       <h6 align="right">
-                        <a href="../html/checkout.html"><font face="Calibri" size="5">Checkout</font></a>
+                        <a href="../html/checkout.html"><button type="button">Checkout</button>></a>
                       </h6>
                     </td>
                   </tr>

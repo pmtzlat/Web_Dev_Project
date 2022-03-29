@@ -2,78 +2,107 @@
   <html lang="en">
 
   <head>
-      <meta charset="utf-8">
-      <title>Checkout</title>
+        <meta charset="utf-8">
+        <title>Checkout</title>
+
+        <style>
+            fieldset {
+                width: 612px;
+                padding: 10px;
+                background-color: white;
+            }
+
+            h2 {
+                font-family: "Calibri", Arial, Helvetica, sans-serif;
+                font-size: 24px;
+            }
+
+            label {
+                font-family: "Calibri", Arial, Helvetica, sans-serif;
+                font-size: 18px;
+            }
+
+            .subtitle-style {
+                font-family: "Calibri", Arial, Helvetica, sans-serif;
+                font-size: 18px;
+            }
+
+            .small-content {
+                font-family: "Calibri", Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                
+            }
+
+            .navbar{
+                background-color: goldenrod;
+                height: 55px;
+                margin:0;
+                padding: 0%;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0; /* Position the navbar at the top of the page */
+                width: 100%; /* Full width */
+            }
+
+            body{
+                margin:0;
+                padding:0;
+                background-color: aliceblue;
+            }
+
+            .icon:hover{
+                background-color: white;
+    
+            }
+        </style>
+
   </head>
 
   <body>
       <center>
-        <table width="100%" cellspacing="0" cellpadding="0" border="0">
-            <tr bgcolor="GoldenRod" height="55px">
-              <td width="5%">
-                <center>
-                  <a href="./index.html">
-                  <img
-                    src="../img/home.svg"
-                    width="25px"
-                    height="auto"
-                    padding="10px"
-                    />
-                  </a>
-                </center>
-              </td>
-              <td width="35%"></td>
-              <td width="15%">
-                <table width="100%">
-                  <tr bgcolor="white" height="30px">
-                    <td>
-                      <input
-                        type="text"
-                        id="name"
-                        size="30"
-                        maxlength="30"
-                        align="middle"
-                        placeholder="Search product..."
-                        border="0"
-                        />
+        <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td class="icon" width="5%">
+                    <center>
+                        <a href="./index.html">
+                        <img
+                            src="../img/home.svg"
+                            width="25px"
+                            height="auto"
+                            padding="10px"
+                            />
+                        </a>
+                    </center>
+                </td>
+                <td width="29%"></td>
+                    <td width="30%">
                     </td>
-                  </tr>
-                </table>
-              </td>
-              <td width="auto" align="right">
-                <font color="white" face="Calibri" size="+3"></font>
-              </td>
-              <td width="5%">
-                <center>
-                  <a href="./settings-account.html"
-                    ><img src="../img/account-cog.svg" alt="Account Settings"
-                    /></a>
-                </center>
-              </td>
-              <td width="5%">
-                <center>
-                  <a href="./login.html"
-                    ><img src="../img/account-circle.svg" alt="Log in"
-                    /></a>
-                </center>
-              </td>
-              <td width="5%">
-                <center>
-                  <a href="./cart.html"
-                    ><img src="../img/cart.svg" alt="Cart"
-                    /></a>
-                </center>
-              </td>
-            </tr>
-          </table>
-          <br /><br />
-          <table>
+                    <td width="auto" align="right"></td>
+                    <td class="icon" width="5%">
+                        <center>
+                        <a href="./settings-account.html">
+                            <img src="../img/account-cog.svg" alt="Log in"/>
+                        </a>
+                        </center>
+                    </td>
+                    <td class="icon" width="5%">
+                        <center>
+                            <a href="./login.html">
+                                <img src="../img/account-circle.svg" alt="Log in"/>
+                            </a>
+                        </center>
+                    </td>
+                    <td class="icon" width="5%">
+                        <center>
+                            <a href="./cart.html">
+                                <img src="../img/cart.svg" alt="Cart"/>
+                            </a>
+                        </center>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+          <br /><br /><br /><br />
               <form action="/action_page.php" method="post">
-                  <tr>
-                      <!-- Left gutter -->
-                      <td width=15%>
-                      </td>
-                      <td width=70%>
                           <!-- Shipping Address fieldset -->
                           <fieldset>
                               <!-- Inner table, contains input fields for Shipping Address -->
@@ -81,7 +110,7 @@
                                   <tr>
                                       <td colspan="4">
                                           <h2>
-                                              <font face="Calibri" size="5">Shipping Address</font>
+                                                Shipping Address
                                           </h2>
                                           <hr />
                                       </td>
@@ -89,13 +118,13 @@
                                   <tr>
                                       <td colspan=2>
                                           <label for="fname">
-                                              <font face="Calibri" size="4">First Name</font>
+                                                First Name
                                           </label><br />
                                           <input type="text" name="fname" size="40" required />
                                       </td>
                                       <td colspan=2>
                                           <label for="lname">
-                                              <font face="Calibri" size="4">Last Name</font>
+                                                Last Name
                                           </label><br />
                                           <input type="text" name="lname" size="40" required />
                                       </td>
@@ -103,7 +132,7 @@
                                   <tr>
                                       <td colspan=4>
                                           <label for="address">
-                                              <font face="Calibri" size="4">Address</font>
+                                                Address
                                           </label><br />
                                           <input type="text" name="address" placeholder="Street address or P.O. Box"
                                               size="40" required /><br />
@@ -114,7 +143,7 @@
                                   <tr>
                                       <td>
                                           <label for="country">
-                                              <font face="Calibri" size="4">Country</font>
+                                                Country
                                           </label><br />
                                           <select name="country" id="country">
                                               <option value="USA">United States</option>
@@ -122,7 +151,7 @@
                                       </td>
                                       <td colspan="2">
                                           <label for="state">
-                                              <font face="Calibri" size="4">State or Province</font>
+                                                State or Province
                                           </label><br />
                                           <select name="state" id="state">
                                               <option value="AL">Alabama</option>
@@ -187,13 +216,13 @@
                                   <tr>
                                       <td colspan="2">
                                           <label for="city">
-                                              <font face="Calibri" size="4">City</font>
+                                                City
                                           </label><br />
                                           <input type="text" name="city" size="40" required />
                                       </td>
                                       <td>
                                           <label for="zip">
-                                              <font face="Calibri" size="4">ZIP</font>
+                                                ZIP
                                           </label><br />
                                           <input type="text" name="zip" maxlength="10" required />
                                       </td>
@@ -201,7 +230,7 @@
                                   <tr>
                                       <td>
                                           <label for="samebilling">
-                                              <font face="Calibri" size="4">Use the same address for billing?</font>
+                                                Use the same address for billing?
                                           </label>
                                           <input type="checkbox" name="samebilling" id="samebilling" value="same">
                                       </td>
@@ -215,7 +244,7 @@
                                   <tr>
                                       <td colspan="4">
                                           <h2>
-                                              <font face="Calibri" size="5">Billing Address</font>
+                                                Billing Address
                                           </h2>
                                           <hr />
                                       </td>
@@ -224,7 +253,7 @@
                                   <tr>
                                       <td colspan=4>
                                           <label for="billaddress">
-                                              <font face="Calibri" size="4">Address</font>
+                                                Address
                                           </label><br />
                                           <input type="text" name="billaddress"
                                               placeholder="Street address or P.O. Box" size="40" required /><br />
@@ -235,15 +264,15 @@
                                   <tr>
                                       <td>
                                           <label for="billcountry">
-                                              <font face="Calibri" size="4">Country</font>
+                                                Country
                                           </label><br />
                                           <select name="billcountry" id="billcountry">
-                                              <option value="USA">United States</option>
+                                                <option value="USA">United States</option>
                                           </select>
                                       </td>
                                       <td colspan="2">
                                           <label for="billstate">
-                                              <font face="Calibri" size="4">State or Province</font>
+                                                State or Province
                                           </label><br />
                                           <select name="billstate" id="billstate">
                                               <option value="AL">Alabama</option>
@@ -308,13 +337,13 @@
                                   <tr>
                                       <td colspan="2">
                                           <label for="billcity">
-                                              <font face="Calibri" size="4">City</font>
+                                                City
                                           </label><br />
                                           <input type="text" name="billcity" size="40" required />
                                       </td>
                                       <td>
                                           <label for="billzip">
-                                              <font face="Calibri" size="4">ZIP</font>
+                                                ZIP
                                           </label><br />
                                           <input type="tel" name="billzip" maxlength="10" required />
                                       </td>
@@ -328,7 +357,7 @@
                                   <tr>
                                       <td colspan="4">
                                           <h2>
-                                              <font face="Calibri" size="5">Payment Method</font>
+                                                Payment Method
                                           </h2>
                                           <hr />
                                       </td>
@@ -336,7 +365,7 @@
                                   <tr>
                                       <td width="100%">
                                           <label for="cardnum">
-                                              <font face="Calibri" size="4">Card Number</font>
+                                                Card Number
                                           </label><br />
                                           <input type="text" name="cardnum" size="40" maxlength="16">
                                       </td>
@@ -344,7 +373,7 @@
                                   <tr>
                                       <td>
                                           <label for="cardname">
-                                              <font face="Calibri" size="4">Cardholder Name</font>
+                                                Cardholder Name
                                           </label><br />
                                           <input type="text" name="cardname" size="40">
                                       </td>
@@ -352,7 +381,7 @@
                                   <tr>
                                       <td>
                                           <label for="expiredate">
-                                              <font face="Calibri" size="4">Expiration Date</font>
+                                                Expiration Date
                                           </label><br />
                                           <select name="expiredatemonth" id="expiredatemonth">
                                               <option value="JAN">01</option>
@@ -383,7 +412,7 @@
                                       </td>
                                       <td>
                                           <label for="cvvcode">
-                                              <font face="Calibri" size="4">CVV</font>
+                                                CVV
                                           </label>
                                           <input type="text" name="cvvcode" size="5" maxlength="4">
                                       </td>
@@ -397,7 +426,7 @@
                                   <tr>
                                       <td colspan="4">
                                           <h2>
-                                              <font face="Calibri" size="5">Review Order</font>
+                                                Review Order
                                           </h2>
                                           <hr />
                                       </td>
@@ -411,13 +440,15 @@
                                                   </td>
                                                   <td>
                                                       <label for="item1">
-                                                          <font face="Calibri" size="4">Product 1</font>
-                                                      </label><br />
-                                                      <font face="Calibri" size="3">$99.99</font><br />
-                                                      <label for="item1quantity">
-                                                          <font face="Calibri" size="4">Quantity: </font>
-                                                      </label>
-                                                      <select name="item1quantity" id="item1quantity">
+                                                            Product 1
+                                                        </label><br />
+                                                        <div class="small-content">
+                                                            $99.99
+                                                        </div><br />
+                                                        <label for="item1quantity">
+                                                            Quantity:
+                                                        </label>
+                                                        <select name="item1quantity" id="item1quantity">
                                                           <option value="Q1">1</option>
                                                           <option value="Q2">2</option>
                                                           <option value="Q3">3</option>
@@ -435,15 +466,19 @@
                                       <td width="50%">
                                           <input type="radio" name="shipopt" id="express" value="express">
                                           <label for="express">
-                                              <font face="Calibri" size="4">Express Shipping</font><br />
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Calibri" size="3">1-2Business Days</font><br />
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Calibri" size="3">$20</font>
+                                                Express Shipping<br />
+                                                <div class="small-content">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1-2Business Days<br />
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$20
+                                                </div>
                                           </label><br />
                                           <input type="radio" name="shipopt" id="normal" value="normal">
                                           <label for="normal">
-                                              <font face="Calibri" size="4">Normal Shipping</font><br />
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Calibri" size="3">3-5Business Days</font><br />
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Calibri" size="3">$8</font>
+                                                Normal Shipping<br />
+                                              <div class="small-content">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3-5Business Days<br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$8
+                                            </div>
                                           </label>
                                       </td>
                                   </tr>
@@ -459,19 +494,13 @@
                                           <input type="submit" value="Place Order">
                                       </td>
                                       <td>
-                                          <font face="Calibri" size="4">Order Total: $119.99</font>
+                                          <div class="subtitle-style">Order Total: $119.99</div>
                                       </td>
                                   </tr>
                               </table>
                           </fieldset>
                           <br /><br /><br />
-                      </td>
-                      <!-- Right gutter -->
-                      <td width=15%>
-                      </td>
-                  </tr>
               </form>
-          </table>
       </center>
   </body>
 
