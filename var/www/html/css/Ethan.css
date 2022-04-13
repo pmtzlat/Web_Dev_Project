@@ -23,3 +23,19 @@
 .hln-logo-sm {
     border-radius: 20%;
 }
+
+#toTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: #daa520;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 15px;
+}
+
+#toTopButton:hover {
+    background-color: #cab88b;
+}
