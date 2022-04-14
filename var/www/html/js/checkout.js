@@ -17,23 +17,19 @@ function displayCart(){
                 <td width="20%">
                   <img
                     src="${item.picture}"
-                    width="200"
+                    width="100"
                     alt="Arduino Starter Kit"
                     style="border-radius:20px"
                     />
                   <br />
                 </td>
                 <td width="60%">
-                  <p style="font-size:larger;font-weight:bold">${item.title}</p><br />
+                  <p style="font-size:larger;font-weight:bold;font-family:Calibri;margin-bottom:0px">${item.title}</p><br />
                   <label for="item2quantity">Quantity</label>
                   <input class="cart-quantity-input" type="number" value="${item.inCart}" size="10" id="item2quantity" style="width:50px;border-radius:3px">
                 </td>
-                <td><span class="cart-price" style="font-weight:bolder">${item.price}</span></td>
-                <td>
-                  <button class="rem" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width:100px">
-                    Remove
-                  </button>
-                </td>
+                <td><span class="cart-price" style="font-weight:bolder;font-family:Calibri;font-size:25px">$${item.price}</span></td>
+               
               </tr>
               
             </table>
@@ -98,7 +94,8 @@ function updateTotal(){
     
 
     total = Math.round(total * 100)/100
-    document.getElementsByClassName("cart-total-price")[0].innerText = "$" + total
+    console.log(total)
+    document.getElementsByClassName("cart-total-price")[0].innerText = "Order Total: $" + total
 }
 
 
