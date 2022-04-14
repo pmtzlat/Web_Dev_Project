@@ -1,5 +1,25 @@
+const searchableItems = {
+    'raspberry pi': 'product/product_4%20GB%20Raspberry%20Pi%204.html',
+}
+
+function keyPress(e) {
+    if (e.keyCode == 13) {
+        search(document.getElementById('name').value);
+    }
+}
+
+function search(term) {
+    if (searchableItems.hasOwnProperty(term.toLowerCase())) {
+        let location = searchableItems[term];
+        if (window.location.href.indexOf('product') < 0) {
+            location = 'product/' + location;
+        }
+        window.location.href = searchableItems[term];
+    }
+}
+
 function displayNavbar() {
-    let navbarContainer = document.querySelector('.navbar-container');
+    const navbarContainer = document.querySelector('.navbar-container');
     let imgLocation = document.currentScript.getAttribute('img-src');
     let htmlDirLocation = document.currentScript.getAttribute('html-dir-src');
 
@@ -39,6 +59,7 @@ function displayNavbar() {
                                     align="middle"
                                     placeholder="Search product..."
                                     border="0"
+                                    onkeypress="keyPress(event)"
                                 />
                             </td>
                         </tr>
