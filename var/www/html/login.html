@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/Ethan.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="./js/navbar-footer.js" defer></script>
+    <script src="./js/authentication.js"></script>
+    <script src="./js/authrouter.js"></script>
     <title>Login</title>
   </head>
 
@@ -17,12 +19,12 @@
       <form>
         <fieldset class="hln-fieldset">
           <legend>Sign in</legend>
-          <label for="email">Email</label><br />
-          <input class="hln-input" type="text" id="text" /><br />
+          <label for="email">Username</label><br />
+          <input class="hln-input" type="text" id="username" /><br />
           <label for="password">Password</label><br />
           <input class="hln-input" type="password" id="password" /><br />
           <a class="hln-link" href="./password-reset.html">Forgot your password?</a><br /><br />
-          <input class="hln-input" type="submit" name="Submit"/><br />
+          <input class="hln-input" type="submit" name="Submit" onclick="loginFlow()"/><br />
         </fieldset>
       </form>
       <br />
@@ -31,13 +33,13 @@
       <form>
         <fieldset class="hln-fieldset">
           <legend>Sign up</legend>
-          <label for="email">Email</label><br />
-          <input class="hln-input" type="text" id="text" /><br />
+          <label for="email">Username</label><br />
+          <input class="hln-input" type="text" id="username" /><br />
           <label for="password">Password</label><br />
           <input class="hln-input" type="password" id="password" /><br />
           <label for="passwordconfirm">Confirm password</label><br />
           <input class="hln-input" type="password" id="passwordconfirm" /><br /><br />
-          <input class="hln-input" type="submit" name="Submit" /><br />
+          <input class="hln-input" type="submit" name="Submit" onclick="loginFlow()" /><br />
         </fieldset>
       </form>
     </center>

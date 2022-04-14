@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/Pablo CSS.css"/>
     <script src="./js/totopbutton.js" defer></script>
     <script src="./js/navbar-footer.js" defer></script>
+    <script src="./js/authentication.js" defer></script>
   </head>
   <body class="hln-background">
     <div class="navbar-container"></div>
@@ -45,9 +46,16 @@
           <td width="1px" bgcolor="black" height="500px"></td>
           <td width="10px"></td>
           <td>
-            <h1>Hello, John Doe!</h1>
+            <h1 id="title">Hello, guest!</h1>
             <h4>Account settings</h4>
             <br />
+            <form>
+              <fieldset width="50%">
+                <legend>Sign out</legend>
+                <input type="submit" name="Sign out" onclick="signout()"/>
+              </fieldset>
+            </form>
+            <hr width="50%" align="left" />
             <form>
               <fieldset width="50%">
                 <legend>Change your email</legend>
