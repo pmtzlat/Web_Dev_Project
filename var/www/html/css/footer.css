@@ -29,6 +29,7 @@
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   padding-bottom: 10px;
   width: 12.5%;
+  display: block !important;
 }
 
 .footer-column ul {
