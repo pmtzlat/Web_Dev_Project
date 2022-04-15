@@ -20,7 +20,7 @@ window.onload = function(_) {
     if(window.location.href.indexOf('settings') > 0) {
         username = localStorage.getItem('username');
         if (username == undefined) {
-            document.getElementById('title').innerHTML = 'Hello, Guest!';
+            document.getElementById('title').innerHTML = 'Hello, guest!';
         } else {
             document.getElementById('title').innerHTML = 'Hello, ' + username + '!';
         }

@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="./js/totopbutton.js" defer></script>
     <script src="./js/navbar-footer.js" defer></script>
+    <script src="./js/filter.js" defer></script>
   </head>
   <body class="hln-background">
     <button onclick="topButton()" id="toTopButton" title="Go to top"><img src="./img/arrow-collapse-up.png" width="50%" height="50%"></button>
@@ -24,49 +25,7 @@
         <tr>
           <td width="6%">
           </td>
-          <td width="20%" valign="top">
-            <h1 class="font">Filters</h1>
-            <br>
-            <label for="name">Maximum Price:</label>
-            <input class="forminput" type="text" id="name" size="10" maxlength="30" placeholder="Ex. $200" style="margin-left:12px;width:60px"><br><br>
-            <label for="language">Manufacturer: </label>
-            <select class="forminput" id="language" style="margin-left:30px">
-              <option>Dell</option>
-              <option>Sony</option>
-              <option>Apple</option>
-              <option>Nvidia</option>
-              <option>AMG</option>
-            </select>
-            <br><br>
-            <p>Ratings:</p>
-            <input type="radio" id="one" name="rev">
-            <label for="one">1 star</label>
-            <br>
-            <input type="radio" id="two" name="rev">
-            <label for="two">2 stars</label>
-            <br>
-            <input type="radio" id="three" name="rev">
-            <label for="three">3 stars</label>
-            <br>
-            <input type="radio" id="four" name="rev">
-            <label for="four">4 stars</label>
-            <br>
-            <input type="radio" id="five" name="rev">
-            <label for="five">5 stars</label>
-            <center></center>
-            <br>
-            <table width="100%">
-              <tbody>
-                <tr width="80%">
-                  <td height="30px">
-                  </td>
-                  <td>
-                    <img src="./img/banner-ad.png" width="100%">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
+          <td class="filter-container" width="20%" valign="top"></div>
           <td width="1px" bgcolor="black" height="500px">
           </td>
           <td>
@@ -99,8 +58,8 @@
                         </tbody>
                       </table>
                       <br>
+                    </a>
                   </td>
-                  </a>
                   <td class="product_card" bgcolor="black" width="30%">
                     <a href="./product/product_Arduino starter kit.html">
                       <center><img class="product_pic" src="https://m.media-amazon.com/images/I/818V0uRvnrL._AC_SL1500_.jpg" width="90%" style="margin-bottom:40px"></center>
