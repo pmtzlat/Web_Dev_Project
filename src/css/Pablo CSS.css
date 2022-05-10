@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+.navbar{
+    background-color: goldenrod;
+    height: 55px;
+    margin:0;
+    padding: 0%;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.icon:hover{
+    background-color: white;
+    
+}
+
+.searchbar{
+    outline:none;
+    width: 100% !important;
+    padding: 3px 15px;
+    height:25px !important;
+    margin:0;
+    border:2px;
+    border-color:goldenrod;
+    border-radius: 4px;
+    font-family: Calibri !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+.categories{
+    margin-top:50px;
+    width:100%;
+    background-color: aliceblue;
+}
+.category_button{
+    background-color:black;
+    border-radius:4px;
+    font-family: Montserrat !important;
+    border-width: 0;
+    color:white;
+
+    
+}
+
+.category_button:hover{
+    background-color: lightgrey;
+    color:black;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+.categories a{
+    height:100%;
+    weight:100px;
+}
+
+.categories a:hover{
+    color:black;
+    font-weight: bold;
+}
+
+.font{
+    font-family:Montserrat;
+}
+
+.forminput{
+    border-radius: 4px;
+    border-width:0;
+    background-color: lightgrey;
+    padding:5px;
+}
+
+input:placeholder-shown{
+    font-weight: bold;
+}
+
+
+div:first-of-type {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+  
+  label {
+    margin-right: 15px;
+    line-height: 32px;
+  }
+  
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+  
+    top: 4px;
+  }
+  
+  input:checked {
+    border: 6px solid black;
+  }
+  
+  button,
+  legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+  }
+  
+  button:hover,
+  button:focus {
+    color: #999;
+  }
+  
+  button:active {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+  }
+
+  .product_card{
+      border-radius:10px;
+      padding:10px;
+      background-color: black;
+      color:white;
+     
+  }
+
+  .product_card:hover{
+      border-color:black;
+      border-width: 10px;
+      background-color: lightgray;
+      color:black
+  }
+
+  .product_pic{
+      border-radius:2px;
+      margin:10px
+  }
+
+  .product_card a{
+      color:white;
+
+  }
+
+  .product_card a:hover{
+    color:black;
+    
+}
+
+.addtocart{
+    color:white;
+    font-weight:bold;
+    border-radius:10px;
+    padding: 10px;
+    margin:20px;
+}
+
+
+
+.addtocart:hover{
+    padding:15px;
+    width:100%;
+    margin:0px;
+}

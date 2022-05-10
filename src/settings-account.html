@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="css/Ethan.css"/>
+    <link rel="stylesheet" href="css/Ethan-Settings.css"/>
+    <link rel="stylesheet" href="css/Pablo CSS.css"/>
+    <script src="js/totopbutton.js" defer></script>
+    <script src="js/navbar-footer.js" defer></script>
+    <script src="js/authentication.js" defer></script>
+  </head>
+  <body class="hln-background">
+    <div class="navbar-container"></div>
+    <button onclick="topButton()" id="toTopButton" title="Go to top"><img src="img/arrow-collapse-up.png" width="50%" height="50%"></button>
+
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="25%"></td>
+          <td width="15%">
+            <table width="50%">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="img/account-circle.svg" />
+                  </td>
+                  <td>
+                    <p>john@doe.net</p>
+                  </td>
+                </tr>
+                <tr>
+                  <ul>
+                    <li><strong>Account Settings</strong></li>
+                    <li>
+                      <a class="hln-link" src="settings-profile">Profile Settings</a>
+                    </li>
+                  </ul>
+                </tr>
+                <hr />
+              </tbody>
+            </table>
+          </td>
+          <td width="1px" bgcolor="black" height="500px"></td>
+          <td width="10px"></td>
+          <td>
+            <h1 id="title">Hello, guest!</h1>
+            <h4>Account settings</h4>
+            <br />
+            <form>
+              <fieldset width="50%">
+                <legend>Sign out</legend>
+                <input type="submit" name="Sign out" value="Sign Out" onclick="signout()"/>
+              </fieldset>
+            </form>
+            <hr width="50%" align="left" />
+            <form>
+              <fieldset width="50%">
+                <legend>Change your email</legend>
+                <label for="email">Email</label><br />
+                <input type="email" name="email" placeholder="john@doe.net" />
+                <input type="submit" name="Submit" />
+              </fieldset>
+            </form>
+            <hr width="50%" align="left" />
+            <form>
+              <fieldset>
+                <legend>Change your password</legend>
+                <label for="passcurrent">Old password</label><br />
+                <input type="password" name="passcurrent" /><br />
+                <label for="passnew">New password</label><br />
+                <input type="password" name="passnew" /><br />
+                <label for="passnewconfirm">Confirm new password</label><br />
+                <input type="password" name="passnewconfirm" />
+                <input type="submit" name="Submit" />
+              </fieldset>
+            </form>
+            <hr width="50%" align="left" />
+            <form>
+              <fieldset>
+                <legend>Delete your account</legend>
+                <p>If you're sure, you can delete your account here:</p>
+                <button>Delete account</button>
+              </fieldset>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer-container"></div>
+  </body>
+</html>
