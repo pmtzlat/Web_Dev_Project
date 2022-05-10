@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'SQL is cool123!',
-    database: 'user'
+    database: 'mydb'
 });
 
 app.use(express.json());
@@ -64,7 +64,7 @@ app.post('/auth', function(req, res) {
     const pass = req.body.password;
 
     if (user && pass) {
-        connection.query(`SELECT * FROM user WHERE (iduser = ? AND psswrd = ?)_`, [user, pass], function(err, results, fields) {
+        connection.query(`SELECT * FROM user WHERE (iduser = ? AND psswrd = ?)`, [user, pass], function(err, results, fields) {
             if (err) throw err;
             if (results.length > 0) {
                 req.session.loggedin = true;
