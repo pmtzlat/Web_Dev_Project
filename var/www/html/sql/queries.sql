@@ -9,7 +9,7 @@ select * from user where (iduser =  'Demo1' and psswrd = 'd3mo1');
 select * from product where (name = 'Arduino Starter Kit');
 
 /*QUERY TO INSERT PRODUCT TO CART */
-insert into relation( user, item, quantity ) values ('Demo1', 'Arduino Nano', 3);
+insert into relation( user, item, quantity ) values ('Demo1', 'Arduino Nano', 1);
 
 
 /*QUERY TO GET ALL THE PRODUCTS IN THE CART FOR A USER*/

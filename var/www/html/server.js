@@ -27,6 +27,10 @@ app.get('/', function(req, res) {
     res.sendFile(`${__dirname}/index.html`);
 });
 
+app.get('/product/4GBRaspberryPi4', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_4 GB Raspberry Pi 4.html`);
+});
+
 app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
 });
@@ -79,6 +83,23 @@ app.post('/auth', function(req, res) {
         res.send('Please enter username and password.');
         res.end();
     }
+})
+
+app.post('/addprod', function(req, res) {
+
+    const user = rec.session.username
+    const product = rec.body.item
+    if(!user){
+        res.redirect('/login');
+    }
+    else if (product){
+        connection.query(`INSERT INTO RELATION( user, item, quantity ) VALUES (?, ?, 1)_`, [user, product], function(err) {
+            if (err) throw err;
+            res.redirect('/cart');
+        });
+    } 
+
+
 })
 
 app.listen(3000);
