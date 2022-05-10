@@ -19,12 +19,12 @@
       <form action="/auth" method="post">
         <fieldset class="hln-fieldset">
           <legend>Sign in</legend>
-          <label for="email">Username</label><br />
-          <input class="hln-input" type="text" id="username" /><br />
+          <label for="username">Username</label><br />
+          <input class="hln-input" type="text" id="username" name="username" required /><br />
           <label for="password">Password</label><br />
-          <input class="hln-input" type="password" id="password" /><br />
+          <input class="hln-input" type="password" id="password" name="password" required /><br />
           <a class="hln-link" src="password-reset">Forgot your password?</a><br /><br />
-          <input class="hln-input" type="submit" name="Submit" onclick="loginFlow()"/><br />
+          <input class="hln-input" type="submit" name="Submit" value="Login"/><br />
         </fieldset>
       </form>
       <br />
@@ -33,7 +33,7 @@
       <form action="/register" method="post">
         <fieldset class="hln-fieldset">
           <legend>Sign up</legend>
-          <label for="email">Username</label><br />
+          <label for="username">Username</label><br />
           <input class="hln-input" type="text" id="username" /><br />
           <label for="password">Password</label><br />
           <input class="hln-input" type="password" id="password" /><br />

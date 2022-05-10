@@ -2,13 +2,12 @@ const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-const { response } = require('express');
 
 const app = express();
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'SQL is cool123!',
     database: 'user'
 });
 
@@ -61,12 +60,12 @@ app.get('/password-reset', function(req, res) {
 // })
 
 app.post('/auth', function(req, res) {
-    const user = request.body.username;
-    const pass = request.body.password;
+    const user = req.body.username;
+    const pass = req.body.password;
 
     if (user && pass) {
-        connection.query(`select * from user where (iduser = ? and psswrd = ?`, [user, pass], function(err, results, fields) {
-            if (error) throw error;
+        connection.query(`SELECT * FROM user WHERE (iduser = ? AND psswrd = ?)_`, [user, pass], function(err, results, fields) {
+            if (err) throw err;
             if (results.length > 0) {
                 req.session.loggedin = true;
                 req.session.username = user;

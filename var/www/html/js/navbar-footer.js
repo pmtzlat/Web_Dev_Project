@@ -20,6 +20,7 @@ function search(term) {
 
 function displayNavbar() {
     const navbarContainer = document.querySelector('.navbar-container');
+    if (!navbarContainer) return;
     let imgLocation = 'img'
     let htmlDirLocation = '/'
 
@@ -107,6 +108,7 @@ function displayNavbar() {
 
 function displayFooter() {
     let footerContainer = document.querySelector('.footer-container');
+    if (!footerContainer) return;
     let cssLocation = 'css/footer.css'
     let htmlDirLocation = '/'
 
