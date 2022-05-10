@@ -5,7 +5,7 @@ function displayCart(){
     let productContainer = document.querySelector(".products-container")
     if(cartItems && productContainer){
         productContainer.innerHTML = "";
-        console.log(cartItems)
+        console.log(localStorage.cartItems)
         
         Object.values(cartItems).map(item =>{
             productContainer.innerHTML += 

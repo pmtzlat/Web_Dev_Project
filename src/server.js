@@ -51,6 +51,13 @@ app.get('/password-reset', function(req, res) {
     res.sendFile(`${__dirname}/password-reset.html`);
 });
 
+if (req.session.loggedin){
+    res.sendFile(`${__dirname}/cart.html/`);
+} else {
+    res.redirect('/login');
+}
+
+
 // TODO: dynamic routes
 
 // JS ROUTES
