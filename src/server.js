@@ -82,19 +82,26 @@ app.post('/auth', function(req, res) {
                 req.session.username = user;
                 res.redirect('/');
             } else {
-                res.send('Incorrect Username or Password.')
+                res.json({ success: false })
             }
             res.end();
         });
     } else {
-        res.send('Please enter username and password.');
+        res.json({ success: false });
         res.end();
     }
-})
+});
 
-app.get('/asdf', function(req,res) {
-    console.log(req.session.loggedin);
-    console.log(req.session.username);
+app.post('/signup', function(req, res) {
+    const user = req.session.username;
+    const pass = req.session.password;
+
+    if (!user || !pass) res.status(400).redirect('/login');
+    if (pass.length < 8) res.status(400).send('Passwords need to be at least 8 characters in length');
+    connection.query('INSERT INTO user(iduser, psswrd) values (?, ?);', [user, pass], function(err, results, fields) {
+        if (err) throw err;
+        res.redirect('/');
+    });
     res.end();
 })
 
