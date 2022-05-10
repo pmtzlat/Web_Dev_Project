@@ -11,5 +11,4 @@ carts.addEventListener("click", () => {
     xhr.send(JSON.stringify({
         product: prod
     }));
-}
-   
+})
