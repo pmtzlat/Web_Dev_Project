@@ -31,6 +31,14 @@ app.get('/4GRaspberryPi4', function(req, res) {
     res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
 });
 
+app.get('/iFlightBeastF7DroneControllerBoard', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_iFlight Beast F7 Drone Controller Board.html`);
+});
+
+app.get('/TS100SmartSolderingIron', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_TS100 Smart Soldering Iron.html`);
+});
+
 app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
 });
