@@ -3,7 +3,8 @@
 
 let carts = document.getElementById('button');
 carts.addEventListener("click", () => {
-    prod = document.getElementById('product')
+    alert('Item added to cart!');
+    prod = document.getElementById('product');
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", '/addcart', true);
