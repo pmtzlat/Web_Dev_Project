@@ -27,6 +27,10 @@ app.get('/', function(req, res) {
     res.sendFile(`${__dirname}/index.html`);
 });
 
+app.get('/products/4GRaspberryPi4', function(req, res) {
+    res.sendFile(`${__dirname}/product_4 GB Raspberry Pi.html`);
+});
+
 app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
 });
@@ -87,6 +91,23 @@ app.post('/auth', function(req, res) {
         res.end();
     }
 })
+
+app.post('/addcart', function(req, res) {
+    const user = req.body.username;
+    const prod = req.body.product;
+    if(!user){
+        res.redirect('/login');
+    }
+    else if (prod) {
+        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES (?, ?, 1);`, [user, prod], function(err) {
+            if (err) throw err;
+           
+            res.redirect('/cart');
+        });
+    }
+}
+    
+
 
 app.listen(3000);
 console.log('Listening on port 3000...')
