@@ -20,15 +20,15 @@ function search(term) {
 
 function displayNavbar() {
     const navbarContainer = document.querySelector('.navbar-container');
-    let imgLocation = document.currentScript.getAttribute('img-src');
-    let htmlDirLocation = document.currentScript.getAttribute('html-dir-src');
+    let imgLocation = 'img'
+    let htmlDirLocation = '/'
 
     if (imgLocation == undefined) {
-        imgLocation = './img/';
+        imgLocation = 'img/';
     }
 
     if (htmlDirLocation == undefined) {
-        htmlDirLocation = './';
+        htmlDirLocation = '/';
     }
 
     navbarContainer.innerHTML += `
@@ -36,7 +36,7 @@ function displayNavbar() {
         <tr>
             <td class="icon" width="5%">
                 <center>
-                    <a href="${htmlDirLocation}index.html">
+                    <a href="/">
                     <img
                         src="${imgLocation}/home.svg"
                         width="25px"
@@ -68,21 +68,21 @@ function displayNavbar() {
                 <td width="auto" align="right"></td>
                 <td class="icon" width="5%">
                     <center>
-                    <a href="${htmlDirLocation}/settings-account.html">
+                    <a href="/${htmlDirLocation}/settings-account">
                         <img src="${imgLocation}/account-cog.svg" alt="Settings"/>
                     </a>
                     </center>
                 </td>
                 <td class="icon" width="5%">
                     <center>
-                        <a href="${htmlDirLocation}/login.html">
+                        <a href="/login">
                             <img src="${imgLocation}/account-circle.svg" alt="Log in"/>
                         </a>
                     </center>
                 </td>
                 <td class="icon" width="5%">
                     <center>
-                        <a href="${htmlDirLocation}/cart.html">
+                        <a href="/cart">
                             <img src="${imgLocation}/cart.svg" alt="Cart"/>
                         </a>
                     </center>
@@ -94,10 +94,10 @@ function displayNavbar() {
     <table class="categories hln-background" cellspacing="15px ">
         <tbody><tr height="30px">
             <td width="15%"></td>
-            <td class="category_button" width="15%"> <a href="Sensors.html"><center>Sensors</center></td></a>
-            <td class="category_button" width="15%"><a href="Motors.html"><center>Motors</center></td></a>
-            <td class="category_button" width="15%"><a href="Microprocessors.html"><center>Microprocessors</center></td></a>
-            <td class="category_button" width="15%"><a href="Tools.html"><center>Tools</center></td></a>
+            <td class="category_button" width="15%"> <a href="/Sensors"><center>Sensors</center></td></a>
+            <td class="category_button" width="15%"><a href="/Motors"><center>Motors</center></td></a>
+            <td class="category_button" width="15%"><a href="/Microprocessors"><center>Microprocessors</center></td></a>
+            <td class="category_button" width="15%"><a href="/Tools"><center>Tools</center></td></a>
             <td width="15%"></td>
         </tr>
     </tbody></table>
@@ -107,15 +107,15 @@ function displayNavbar() {
 
 function displayFooter() {
     let footerContainer = document.querySelector('.footer-container');
-    let cssLocation = document.currentScript.getAttribute('css-src');
-    let htmlDirLocation = document.currentScript.getAttribute('html-dir-src');
+    let cssLocation = 'css/footer.css'
+    let htmlDirLocation = '/'
 
     if (cssLocation == undefined) {
-        cssLocation = './css/footer.css';
+        cssLocation = 'css/footer.css';
     }
 
     if (htmlDirLocation == undefined) {
-        htmlDirLocation = './';
+        htmlDirLocation = '/';
     }
 
     footerContainer.innerHTML += `
@@ -130,8 +130,8 @@ function displayFooter() {
                 <!-- Footer column 1 -->
                 <h3>Company Information</h3>
                 <ul>
-                    <li><a href="${htmlDirLocation}/aboutme.html">About Robostore</a></li>
-                    <li><a href="${htmlDirLocation}/faq.html">FAQ</a></li>
+                    <li><a href="/about">About Robostore</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                     <li><a>Careers</a></li>
                 </ul>
           </div>
@@ -155,8 +155,8 @@ function displayFooter() {
                 <!-- Footer column 4 -->
                 <h3>My Account</h3>
                 <ul>
-                    <li><a href="${htmlDirLocation}/login.html">Login</a></li>
-                    <li><a href="${htmlDirLocation}/settings-account.html">Account Settings</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/${htmlDirLocation}/settings-account">Account Settings</a></li>
                     <li><a>Order History</a></li>
                     <li><a>Return History</a></li>
                     <li><a>Wish List</a></li>

@@ -61,7 +61,7 @@ function filterRead() {
         
             filterReadContainer.innerHTML += `
             <td class="product_card" width="30%" valign="top">
-              <a class="product_card" style="width: 30%; margin: 10px; margin-bottom: 100%" href="./product/${v[0]}.html">
+              <a class="product_card" style="width: 30%; margin: 10px; margin-bottom: 100%" src="product/${v[0]}">
                 <center><img  class="product_pic" src="${v[1][3]}" width="90%"></center>
                 <table >
                   <tbody>
@@ -80,7 +80,7 @@ function filterRead() {
                       <td width="2%">
                       </td>
                       <td>
-                        <img src="./img/stars.png" width="100%">
+                        <img src="img/stars.png" width="100%">
                       </td>
                     </tr>
                   </tbody>
@@ -152,7 +152,7 @@ function displayFilterBar() {
                   <td height="30px">
                   </td>
                   <td>
-                    <img src="./img/banner-ad.png" width="100%">
+                    <img src="img/banner-ad.png" width="100%">
                   </td>
                 </tr>
               </tbody>
