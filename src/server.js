@@ -27,8 +27,8 @@ app.get('/', function(req, res) {
     res.sendFile(`${__dirname}/index.html`);
 });
 
-app.get('/products/4GRaspberryPi4', function(req, res) {
-    res.sendFile(`${__dirname}/product_4 GB Raspberry Pi.html`);
+app.get('/4GRaspberryPi4', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
 });
 
 app.get('/about', function(req, res) {
@@ -55,11 +55,11 @@ app.get('/password-reset', function(req, res) {
     res.sendFile(`${__dirname}/password-reset.html`);
 });
 
-if (req.session.loggedin){
-    res.sendFile(`${__dirname}/cart.html/`);
-} else {
-    res.redirect('/login');
-}
+// if (req.session.loggedin){
+//     res.sendFile(`${__dirname}/cart.html/`);
+// } else {
+//     res.redirect('/login');
+// }
 
 
 // TODO: dynamic routes
@@ -80,7 +80,7 @@ app.post('/auth', function(req, res) {
             if (results.length > 0) {
                 req.session.loggedin = true;
                 req.session.username = user;
-                res.redirect('/home');
+                res.redirect('/');
             } else {
                 res.send('Incorrect Username or Password.')
             }
@@ -92,20 +92,27 @@ app.post('/auth', function(req, res) {
     }
 })
 
+app.get('/asdf', function(req,res) {
+    console.log(req.session.loggedin);
+    console.log(req.session.username);
+    res.end();
+})
+
 app.post('/addcart', function(req, res) {
-    const user = req.body.username;
+    const user = req.session.username;
     const prod = req.body.product;
     if(!user){
         res.redirect('/login');
-    }
-    else if (prod) {
-        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES (?, ?, 1);`, [user, prod], function(err) {
+    } else if (prod) {
+        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES ("Demo1", "4G-Raspberry-Pi-4", 1);`, [user, prod], function(err) {
             if (err) throw err;
            
             res.redirect('/cart');
+
+            res.end();
         });
     }
-}
+});
     
 
 
