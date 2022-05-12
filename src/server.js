@@ -47,7 +47,7 @@ app.get('/test', function(req, res) {
     res.render('test', { title: 'Test', message: 'asdf' });
 })
 
-app.get('/4GRaspberryPi4', function(req, res) {
+app.get('/4G-Raspberry-Pi-4', function(req, res) {
     res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
 });
 
