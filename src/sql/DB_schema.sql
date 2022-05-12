@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `name` VARCHAR(100) NOT NULL,
   `manufacturer` VARCHAR(100) NOT NULL,
   `rating` DOUBLE NOT NULL,
-  `price` DOUBLE NOT NULL DEFAULT 0,
+  `price` DECIMAL(6,2) NOT NULL DEFAULT 0,
   `category` VARCHAR(45) NULL,
   `image` VARCHAR(500) NULL,
   `stock` INT NOT NULL DEFAULT 0,
