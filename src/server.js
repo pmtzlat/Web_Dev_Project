@@ -63,6 +63,22 @@ app.get('/VictorBBMotorController', function(req, res) {
     res.sendFile(`${__dirname}/product/product_Victor BB Motor Controller.html`);
 });
 
+app.get('/Microprocessors', function(req, res) {
+    res.sendFile(`${__dirname}/Microprocessors.html`);
+});
+
+app.get('/Motors', function(req, res) {
+    res.sendFile(`${__dirname}/Motors.html`);
+});
+
+app.get('/Tools', function(req, res) {
+    res.sendFile(`${__dirname}/Tools.html`);
+});
+
+app.get('/Sensors', function(req, res) {
+    res.sendFile(`${__dirname}/Sensors.html`);
+});
+
 
 
 
