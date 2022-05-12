@@ -79,7 +79,13 @@ app.get('/Sensors', function(req, res) {
     res.sendFile(`${__dirname}/Sensors.html`);
 });
 
+app.get('/aboutme', function(req, res) {
+    res.sendFile(`${__dirname}/aboutme.html`);
+});
 
+app.get('/faq', function(req, res) {
+    res.sendFile(`${__dirname}/faq.html`);
+});
 
 
 
