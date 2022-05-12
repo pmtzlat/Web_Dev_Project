@@ -50,15 +50,9 @@ app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
     let rating = params.rating;
     let price = params.price;
 
-<<<<<<< HEAD
     const manufacturerQuery = manufacturer ? `AND manufacturer = '${manufacturer}'` : '';
     const ratingQuery = rating ? `AND rating >= ${rating}` : '';
     const priceQuery = price ? `AND price <= ${price}` : '';
-=======
-app.get('/4G-Raspberry-Pi-4', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
-});
->>>>>>> 214e25aeca6acb1dceeffeda1ad58fb6c4c8be18
 
     if (typeof manufacturer != 'string') manufacturer = undefined;
     if (typeof rating != 'number') rating = undefined;
