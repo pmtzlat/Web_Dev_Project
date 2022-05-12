@@ -25,7 +25,8 @@ app.use(session({
     saveUninitialized: true
 }))
 
-// HTML ROUTES
+// HTML DYNAMIC ROUTES
+
 app.get('/', function(req, res) {
     connection.query('SELECT * FROM product;' , function(err, rows, fields) {
         if (err) throw err;
@@ -43,21 +44,27 @@ app.get('/category/:category', function(req, res) {
     });
 });
 
-app.get('/test', function(req, res) {
-    res.render('test', { title: 'Test', message: 'asdf' });
-})
+app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
+    const params = req.params;
+    let manufacturer = params.manufacturer;
+    let rating = params.rating;
+    let price = params.price;
 
-app.get('/4GRaspberryPi4', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
+    const manufacturerQuery = manufacturer ? `AND manufacturer = '${manufacturer}'` : '';
+    const ratingQuery = rating ? `AND rating >= ${rating}` : '';
+    const priceQuery = price ? `AND price <= ${price}` : '';
+
+    if (typeof manufacturer != 'string') manufacturer = undefined;
+    if (typeof rating != 'number') rating = undefined;
+    if (typeof price != 'number') price = undefined;
+
+    connection.query(`SELECT * FROM product WHERE 1=1 ${priceQuery} ${manufacturerQuery} ${ratingQuery};`, function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Filter', products: rows });
+    });
 });
 
-app.get('/iFlightBeastF7DroneControllerBoard', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_iFlight Beast F7 Drone Controller Board.html`);
-});
-
-app.get('/TS100SmartSolderingIron', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_TS100 Smart Soldering Iron.html`);
-});
+// HTML STATIC ROUTES
 
 app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
@@ -87,13 +94,7 @@ app.get('/search', function(req, res) {
     res.sendFile(`${__dirname}/filter.html`);
 })
 
-// TODO: dynamic routes
-
-// JS ROUTES
-
-// app.get('/js/navbar-footer.js', function(req, res) {
-//     res.sendFile('./js/navbar-footer.js');
-// })
+// POST ROUTES
 
 app.post('/auth', function(req, res) {
     const user = req.body.username;
