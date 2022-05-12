@@ -25,27 +25,58 @@ html(lang="en")
                     td(width='6%')
                     td(class='filter-container' width='20%' valign='top')
                     td(width='1px' height='500px' bgcolor='black')
-                    td
-                        table(class='hln-background' style="border-radius:0 20px 20px 0" width="100%" cellspacing="25px")
-                            tbody
-                                if products.length == 0
-                                    tr
-                                        td 
-                                            h1(style='font-size:20px; margin:30px; white-space:pre;')
-                                                | Sorry, we are out of stock at the moment!
-                                                | Restocks happen every 1st and 15th of each month.
+                    if products.length == 1
+                        td( width="30%" valign="top")
+                            table(class='hln-background' style="border-radius:0 20px 20px 0" width="100%" cellspacing="25px")
+                                tbody
+                                    if products.length == 0
+                                        tr
+                                            td 
+                                                h1(style='font-size:20px; margin:30px; white-space:pre;')
+                                                    | Sorry, we are out of stock at the moment!
+                                                    | Restocks happen every 1st and 15th of each month.
 
-                                            img(src='https://cdn3.iconfinder.com/data/icons/e-commerce-website-1/64/Out-of-stock-512.png' style='width:40%; margin-left:60px')
+                                                img(src='https://cdn3.iconfinder.com/data/icons/e-commerce-website-1/64/Out-of-stock-512.png' style='width:40%; margin-left:60px')
 
-                                else
-                                    - for (let i = 0; i < products.length; i += 3) {
-                                        tr(height='30px')
-                                        tr(height='100px')
-                                            //- Add 3 products to the row
-                                            - for (let j = 0; j < 3; j++) {
-                                                if (products[i + j])
-                                                    - const product = products[i + j]
-                                                    +card(product.name, product.price, product.image, product.rating)
+                                    else
+                                        - for (let i = 0; i < products.length; i += 3) {
+                                            tr(height='30px')
+                                            tr(height='100px')
+                                                //- Add 3 products to the row
+                                                - for (let j = 0; j < 3; j++) {
+                                                    if (products[i + j])
+                                                        - const product = products[i + j]
+                                                        +card(product.name, product.price, product.image, product.rating)
+                                                - }
+                                        - }
+                        td(width="70%")
+                    else 
+                        td
+                                table(class='hln-background' style="border-radius:0 20px 20px 0" width="100%" cellspacing="25px")
+                                    tbody
+                                        if products.length == 0
+                                            tr
+                                                td 
+                                                    h1(style='font-size:20px; margin:30px; white-space:pre;')
+                                                        | Sorry, we are out of stock at the moment!
+                                                        | Restocks happen every 1st and 15th of each month.
+
+                                                    img(src='https://cdn3.iconfinder.com/data/icons/e-commerce-website-1/64/Out-of-stock-512.png' style='width:40%; margin-left:60px')
+
+                                        else
+                                            - for (let i = 0; i < products.length; i += 3) {
+                                                tr(height='30px')
+                                                tr(height='100px')
+                                                    //- Add 3 products to the row
+                                                    - for (let j = 0; j < 3; j++) {
+                                                        if (products[i + j])
+                                                            - const product = products[i + j]
+                                                            +card(product.name, product.price, product.image, product.rating)
+                                                    - }
                                             - }
+<<<<<<< HEAD
                                     - }
         div(class='footer-container')
+=======
+                                            
+>>>>>>> 214e25aeca6acb1dceeffeda1ad58fb6c4c8be18
