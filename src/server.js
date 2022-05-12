@@ -12,7 +12,10 @@ const connection = mysql.createConnection({
 });
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.engine('pug', require('pug').__express);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 app.use('/img', express.static(`${__dirname}/img`));
 app.use('/css', express.static(`${__dirname}/css`));
 app.use('/js', express.static(`${__dirname}/js`));
@@ -24,8 +27,25 @@ app.use(session({
 
 // HTML ROUTES
 app.get('/', function(req, res) {
-    res.sendFile(`${__dirname}/index.html`);
+    connection.query('SELECT * FROM product;' , function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Home', products: rows });
+    });
 });
+
+app.get('/category/:category', function(req, res) {
+    const params = req.params;
+    const id = params.category.substring(0, params.category.length - 1);
+    connection.query('SELECT * FROM product WHERE category = ?;', [id], function(err, rows, fields) {
+        if (err) throw err;
+        console.log(rows);
+        res.render('products-view', { title: 'Category', products: rows });
+    });
+});
+
+app.get('/test', function(req, res) {
+    res.render('test', { title: 'Test', message: 'asdf' });
+})
 
 app.get('/4GRaspberryPi4', function(req, res) {
     res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
@@ -63,12 +83,9 @@ app.get('/password-reset', function(req, res) {
     res.sendFile(`${__dirname}/password-reset.html`);
 });
 
-// if (req.session.loggedin){
-//     res.sendFile(`${__dirname}/cart.html/`);
-// } else {
-//     res.redirect('/login');
-// }
-
+app.get('/search', function(req, res) {
+    res.sendFile(`${__dirname}/filter.html`);
+})
 
 // TODO: dynamic routes
 
@@ -101,17 +118,25 @@ app.post('/auth', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
-    const user = req.session.username;
-    const pass = req.session.password;
+    const user = req.body.username;
+    const pass = req.body.password;
 
     if (!user || !pass) res.status(400).redirect('/login');
     if (pass.length < 8) res.status(400).send('Passwords need to be at least 8 characters in length');
     connection.query('INSERT INTO user(iduser, psswrd) values (?, ?);', [user, pass], function(err, results, fields) {
         if (err) throw err;
+        req.session.loggedin = true;
+        req.session.username = user;
         res.redirect('/');
     });
-    res.end();
+    // res.end();
 })
+
+app.post('/signout', function(req,res) {
+    req.session.loggedin = false;
+    req.session.username = undefined;
+    res.redirect('/');
+});
 
 app.post('/addcart', function(req, res) {
     const user = req.session.username;

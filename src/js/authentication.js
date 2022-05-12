@@ -2,13 +2,19 @@ const signin = document.getElementById('signin');
 
 let username = localStorage.getItem('username');
 
-function loginFlow() {
+document.getElementById('cheese2').addEventListener("click",function() {
     let user = document.getElementById('username').value;
     if (user != '') {
         localStorage.setItem('username', user);
-        location.reload();
     }
-}
+})
+
+document.getElementById('cheese').addEventListener("click",function() {
+    let user = document.getElementById('rusername').value;
+    if (user != '') {
+        localStorage.setItem('username', user);
+    }
+})
 
 function signout() {
     username = '';

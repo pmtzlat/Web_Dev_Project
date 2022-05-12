@@ -8,38 +8,46 @@
     <link rel="stylesheet" href="css/Ethan.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="js/navbar-footer.js" defer></script>
-    <script src="js/authentication.js"></script>
+    <script src="js/authentication.js" defer></script>
     <script src="js/authrouter.js"></script>
     <title>Login</title>
   </head>
+
+  <style>
+    * {
+      font-family: Montserrat;
+    }
+  </style>
 
   <body class="hln-background">
     <div class="navbar-container"></div>
     <center>
       <form action="/auth" method="post">
         <fieldset class="hln-fieldset">
+          <p id="cheese2"><strong>Welcome back!</strong></p>
           <legend>Sign in</legend>
           <label for="username">Username</label><br />
           <input class="hln-input" type="text" id="username" name="username" required /><br />
           <label for="password">Password</label><br />
           <input class="hln-input" type="password" id="password" name="password" required /><br />
-          <a class="hln-link" src="password-reset">Forgot your password?</a><br /><br />
-          <input class="hln-input" type="submit" name="Submit" value="Login"/><br />
+          <input class="hln-input" type="submit" name="Submit" id="submit" value="Login"/><br />
         </fieldset>
+        <button onclick="loginFlow()" class="hln-link">Forgot your password?</button><br /><br />
       </form>
       <br />
       <hr style="width: 50%"/>
       <br />
-      <form action="/register" method="post">
+      <form action="/signup" method="post">
         <fieldset class="hln-fieldset">
           <legend>Sign up</legend>
           <label for="username">Username</label><br />
-          <input class="hln-input" type="text" id="username" /><br />
+          <input class="hln-input" type="text" name="username" id="rusername" /><br />
           <label for="password">Password</label><br />
-          <input class="hln-input" type="password" id="password" /><br />
+          <input class="hln-input" type="password" name="password" id="rpassword" /><br />
           <label for="passwordconfirm">Confirm password</label><br />
-          <input class="hln-input" type="password" id="passwordconfirm" /><br /><br />
-          <input class="hln-input" type="submit" name="Submit" onclick="loginFlow()" /><br />
+          <input class="hln-input"type="password" id="passwordconfirm" /><br /><br />
+          <p id="cheese">By continuing, you agree to our terms and conditions.</p>
+          <input class="hln-input" type="submit" value="Submit" name="Submit" /><br />
         </fieldset>
       </form>
     </center>

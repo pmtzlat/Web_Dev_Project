@@ -20,19 +20,14 @@ function search(term) {
 
 function displayNavbar() {
     const navbarContainer = document.querySelector('.navbar-container');
+    let htm = '';
     if (!navbarContainer) return;
-    let imgLocation = 'img'
-    let htmlDirLocation = '/'
+    const imgLocation = '/img'
+    const htmlDirLocation = '/'
 
-    if (imgLocation == undefined) {
-        imgLocation = 'img/';
-    }
+    const username = localStorage.getItem('username');
 
-    if (htmlDirLocation == undefined) {
-        htmlDirLocation = '/';
-    }
-
-    navbarContainer.innerHTML += `
+    htm += `
     <table class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0">
         <tr>
             <td class="icon" width="5%">
@@ -47,7 +42,31 @@ function displayNavbar() {
                     </a>
                 </center>
             </td>
-            <td width="29%"></td>
+            `
+
+            if (!username) {
+                htm += `
+                <td class="icon" width="5%">
+                    <center>
+                        <a href="/login">
+                            <img src="${imgLocation}/account-circle.svg" alt="Log in"/>
+                        </a>
+                    </center>
+                </td>
+                <td width="24%"></td>
+                `;
+            } else {
+                htm += `
+                <td id="signout" class="icon" width="5%" style="cursor:pointer;">
+                    <center>
+                        <img src="${imgLocation}/location-exit.svg" alt="Log out/">
+                    </center>
+                </td>
+                <td width="10%" style="font-family: 'Sans-serif';"><center>Hello, ${username}!</center></td>
+                <td width="14%"></td>
+                `
+            }
+            htm += `
                 <td width="30%">
                     <table width="100%">
                         <tr height="30px">
@@ -76,13 +95,6 @@ function displayNavbar() {
                 </td>
                 <td class="icon" width="5%">
                     <center>
-                        <a href="/login">
-                            <img src="${imgLocation}/account-circle.svg" alt="Log in"/>
-                        </a>
-                    </center>
-                </td>
-                <td class="icon" width="5%">
-                    <center>
                         <a href="/cart">
                             <img src="${imgLocation}/cart.svg" alt="Cart"/>
                         </a>
@@ -95,30 +107,36 @@ function displayNavbar() {
     <table class="categories hln-background" cellspacing="15px ">
         <tbody><tr height="30px">
             <td width="15%"></td>
-            <td class="category_button" width="15%"> <a href="/Sensors"><center>Sensors</center></td></a>
-            <td class="category_button" width="15%"><a href="/Motors"><center>Motors</center></td></a>
-            <td class="category_button" width="15%"><a href="/Microprocessors"><center>Microprocessors</center></td></a>
-            <td class="category_button" width="15%"><a href="/Tools"><center>Tools</center></td></a>
+            <td class="category_button" width="15%"> <a href="/category/Sensors"><center>Sensors</center></td></a>
+            <td class="category_button" width="15%"><a href="/category/Motors"><center>Motors</center></td></a>
+            <td class="category_button" width="15%"><a href="/category/Microprocessors"><center>Microprocessors</center></td></a>
+            <td class="category_button" width="15%"><a href="/category/Tools"><center>Tools</center></td></a>
             <td width="15%"></td>
         </tr>
     </tbody></table>
     <br>
-    `
+    `;
+    navbarContainer.innerHTML = htm;
+
+    let signout = document.getElementById('signout');
+    if (signout) {
+        signout.addEventListener("click", () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", '/signout', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send();
+            localStorage.clear();
+            location.reload();
+        });
+    }
 }
 
+
 function displayFooter() {
-    let footerContainer = document.querySelector('.footer-container');
+    const footerContainer = document.querySelector('.footer-container');
     if (!footerContainer) return;
-    let cssLocation = 'css/footer.css'
-    let htmlDirLocation = '/'
-
-    if (cssLocation == undefined) {
-        cssLocation = 'css/footer.css';
-    }
-
-    if (htmlDirLocation == undefined) {
-        htmlDirLocation = '/';
-    }
+    const cssLocation = '/css/footer.css'
+    const htmlDirLocation = '/'
 
     footerContainer.innerHTML += `
     <link rel="stylesheet" href="${cssLocation}"/>
