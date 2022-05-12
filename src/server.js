@@ -39,6 +39,34 @@ app.get('/TS100SmartSolderingIron', function(req, res) {
     res.sendFile(`${__dirname}/product/product_TS100 Smart Soldering Iron.html`);
 });
 
+app.get('/ArduinoNano', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_Arduino Nano.html`);
+});
+
+app.get('/Arduinostarterkit', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_Arduino starter kit.html`);
+});
+
+app.get('/M27-150-PMotor', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_M27-150-P Motor.html`);
+});
+
+app.get('/RP4020MicrocontrollerKit', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_RP4020 Microcontroller Kit.html`);
+});
+
+app.get('/Solo60MotorController', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_Solo 60 Motor Controller.html`);
+});
+
+app.get('/VictorBBMotorController', function(req, res) {
+    res.sendFile(`${__dirname}/product/product_Victor BB Motor Controller.html`);
+});
+
+
+
+
+
 app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
 });
@@ -119,7 +147,7 @@ app.post('/addcart', function(req, res) {
     if(!user){
         res.redirect('/login');
     } else if (prod) {
-        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES ("Demo1", "4G-Raspberry-Pi-4", 1);`, [user, prod], function(err) {
+        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES ("Demo1", "4G-Raspberry-Pi-4", 1);`, [user, prod], function(err, results ) {
             if (err) throw err;
            
             res.redirect('/cart');
@@ -128,6 +156,22 @@ app.post('/addcart', function(req, res) {
         });
     }
 });
+ /* TODO: THIS IS FOR THE SEARCHBAR, ITS NOT FINISHED, BUT IN THEORY IT ACCESSES THE DATABASE 
+    AND RETRIEVES A PRODUCT IF THE USER INPUT IS THE EXACT PRODUCT NAME STORED IN THE DB
+
+app.post('/search', function(req, res) {
+    const userinpt = req.body.inpt;
+    console.log(userinpt)
+    connection.query(`SELECT * FROM PRODUCT WHERE (name = ?);`, [userinpt], function(err, results){
+        if (err) throw err;
+        console.log(results)
+
+    } )
+
+
+
+});
+*/
     
 
 

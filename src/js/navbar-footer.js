@@ -4,11 +4,21 @@ const searchableItems = {
 
 function keyPress(e) {
     if (e.keyCode == 13) {
-        search(document.getElementById('name').value);
+        inpt = document.getElementById('name').value;
+        search(inpt);
     }
 }
 
 function search(term) {
+    /*
+    console.log(term)
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", '/search', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        inpt: term
+    }));
+*/
     if (searchableItems.hasOwnProperty(term.toLowerCase())) {
         let location = searchableItems[term];
         if (window.location.href.indexOf('product') < 0) {

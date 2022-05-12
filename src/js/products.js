@@ -39,6 +39,33 @@ carts.addEventListener("click", () => {
         }));
 
     }
+    else if(prod == "Arduino Nano"){
+        xhr.send(JSON.stringify({
+            product: 'Arduino Nano'
+        }));
+
+    }
+    else if(prod == "Arduino Starter Kit"){
+        xhr.send(JSON.stringify({
+            product: 'Arduino Starter Kit'
+        }));
+
+    }else if(prod == "RP4020 Microcontroller Kit"){
+        xhr.send(JSON.stringify({
+            product: 'RP4020 Microcontroller Kit'
+        }));
+
+    }else if(prod == "Solo 60 Motor Controller"){
+        xhr.send(JSON.stringify({
+            product: 'Solo 60 Motor Controller'
+        }));
+
+    }else if(prod == "Victor BB Motor Controller"){
+        xhr.send(JSON.stringify({
+            product: 'Victor BB Motor Controller'
+        }));
+
+    }
     else{
         alert('Error when adding item to cart')
     }
