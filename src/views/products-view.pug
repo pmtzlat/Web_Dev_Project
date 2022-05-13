@@ -32,7 +32,7 @@ html(lang="en")
                             +card(product.name, product.price, product.image, product.rating)
                         td(width="70%")
                     else 
-                        td
+                        td(valign="top")
                                 table(class='hln-background' style="border-radius:0 20px 20px 0" width="100%" cellspacing="25px")
                                     tbody
                                         if products.length == 0

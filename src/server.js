@@ -43,6 +43,17 @@ app.get('/category/:category', function(req, res) {
     });
 });
 
+app.get('/product/:product', function(req, res) {
+    const product = req.params.product.substring(1, req.params.product.length);
+    
+    connection.query('SELECT * FROM product WHERE name = ?;', [product], function(err, row, fields) {
+        if (err) throw err;
+        console.log(row[0].price)
+        res.render('indiv_product-view', { title: 'Product', name : row[0].name, price : row[0].price , category: row[0].category, image: row[0].image,
+     stock: row.stock, description: row.description});
+    });
+});
+
 app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
     const params = req.params;
     let manufacturer = params.manufacturer;
