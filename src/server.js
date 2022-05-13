@@ -28,10 +28,21 @@ app.use(session({
 // HTML DYNAMIC ROUTES
 
 app.get('/', function(req, res) {
-    console.log(req.session.loggedin);
     connection.query('SELECT * FROM product;' , function(err, rows, fields) {
         if (err) throw err;
         res.render('products-view', { title: 'Home', products: rows, username: req.session.username });
+    });
+});
+
+app.get('/cart', function(req, res) {
+    if (!req.session.username) {
+        res.redirect('/login');
+        return;
+    }
+    connection.query(`SELECT * FROM relation WHERE user = '${req.session.username}'`, function(err, rows, fields) {
+        if (err) throw err;
+        console.log(rows);
+        res.render('cart', { username: req.session.username, cart: rows });
     });
 });
 
@@ -108,10 +119,6 @@ app.get('/about', function(req, res) {
     res.sendFile(`${__dirname}/aboutme.html`);
 });
 
-app.get('/cart', function(req, res) {
-    res.sendFile(`${__dirname}/cart.html`);
-});
-
 app.get('/checkout', function(req, res) {
     res.sendFile(`${__dirname}/checkout.html`);
 });
@@ -180,16 +187,16 @@ app.post('/signout', function(req,res) {
 
 app.post('/addcart', function(req, res) {
     const user = req.session.username;
+    const img = req.body.image;
     const prod = req.body.product;
-    if(!user){
+    if (!user) {
         res.redirect('/login');
     } else if (prod) {
-        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES ("Demo1", "4G-Raspberry-Pi-4", 1);`, [user, prod], function(err) {
+        connection.query(`INSERT INTO relation( user, item, price, image ) VALUES (?, ?, 20, ?);`, [user, prod, img], function(err) {
             if (err) throw err;
-           
-            res.redirect('/cart');
-
+            res.redirect('/cart');  
             res.end();
+
         });
     }
 });

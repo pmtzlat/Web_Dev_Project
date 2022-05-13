@@ -11,10 +11,11 @@ html(lang="en")
     link(href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet')
     script(src="/js/totopbutton.js" defer)
     script(src="/js/navbar-footer.js" img-src="img" html-dir-src="" css-src="css/footer.css" defer)
+    script(src="/js/products.js" defer)
 
   body(class="hln-background")
     button(onclick="topButton()" id="toTopButton" title="Go to top")
-        img(src="img/arrow-collapse-up.png" width="50%" height="50%")
+        img(src="/img/arrow-collapse-up.png" width="50%" height="50%")
     navbar(username)
     br
     table(width="100%" class="font")
@@ -35,7 +36,7 @@ html(lang="en")
               tbody
                 tr(height="30%" width="100%" valign="top")
                   td(width="60%")  
-                    img(src=image width="80%")
+                    img(id='product-image' src=image width="80%")
                   
                   td
                     table(width="100%" height="100%")
@@ -73,7 +74,7 @@ html(lang="en")
                 tr(height="5%")
                   td
                     font(size="+7")
-                        strong(id="product") !{name}
+                        strong(class="product") !{name}
               
                 tr(height="5%")
                   td
@@ -108,6 +109,4 @@ html(lang="en")
           tr(height="150px")
             td
           
-    
-    script(src="js/products.js")
     div(class="footer-container")

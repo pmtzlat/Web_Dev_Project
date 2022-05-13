@@ -59,7 +59,8 @@ DROP TABLE IF EXISTS `mydb`.`relation` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`relation` (
   `user` VARCHAR(15) NOT NULL,
   `item` VARCHAR(45) NOT NULL,
-  `quantity` INT(3) UNSIGNED NOT NULL,
+  `price` DECIMAL(6,2) NOT NULL DEFAULT 0,
+  `image` VARCHAR(500) NULL,
   PRIMARY KEY (`user`, `item`),
   INDEX `nameitem_idx` (`item` ASC) VISIBLE,
   CONSTRAINT `iduser`
