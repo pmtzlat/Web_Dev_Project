@@ -16,7 +16,7 @@ function displayNavbar() {
     button.style.cursor = 'pointer';
 
     const to = button.getAttribute('to');
-    if (to) {
+    if (to && to != '/signout') {
       button.addEventListener('click', function () {
         window.location.href = to;
       })
@@ -30,7 +30,6 @@ function displayNavbar() {
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send();
       localStorage.clear();
-      location.reload();
     });
   }
 }
@@ -84,20 +83,7 @@ function displayNavbarStatic() {
                   </table>
               </td>
               <td width="auto" align="right"></td>
-              <td class="icon" width="5%">
-                  <center>
-                  <a href="/${htmlDirLocation}/settings-account">
-                      <img src="${imgLocation}/account-cog.svg" alt="Settings"/>
-                  </a>
-                  </center>
-              </td>
-              <td class="icon" width="5%">
-                  <center>
-                      <a href="/login">
-                          <img src="${imgLocation}/account-circle.svg" alt="Log in"/>
-                      </a>
-                  </center>
-              </td>
+              
               <td class="icon" width="5%">
                   <center>
                       <a href="/cart">

@@ -1,7 +1,7 @@
 mixin card(name, price, image, rating)
     - price = `${price.toFixed(2)}`;
     td(class="product_card" width="30%" valign="top")
-        a(href=`/products/${name}`)
+        a(href=`/product/${name}`)
             center                                              
                 img(src=image class="product_pic" width="90%")
                 table

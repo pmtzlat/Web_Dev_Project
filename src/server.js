@@ -28,6 +28,7 @@ app.use(session({
 // HTML DYNAMIC ROUTES
 
 app.get('/', function(req, res) {
+    console.log(req.session.loggedin);
     connection.query('SELECT * FROM product;' , function(err, rows, fields) {
         if (err) throw err;
         res.render('products-view', { title: 'Home', products: rows, username: req.session.username });
@@ -44,12 +45,21 @@ app.get('/category/:category', function(req, res) {
 });
 
 app.get('/product/:product', function(req, res) {
-    const product = req.params.product.substring(1, req.params.product.length);
+    const product = req.params.product;
     
     connection.query('SELECT * FROM product WHERE name = ?;', [product], function(err, row, fields) {
         if (err) throw err;
-        res.render('indiv_product-view', { title: 'Product', name : row[0].name, price : row[0].price , category: row[0].category, image: row[0].image,
-     stock: row.stock, description: row.description});
+        res.render('indiv_product-view', { 
+            title: 'Product',
+            username: req.session.username,
+            name : row[0].name,
+            price : row[0].price, 
+            rating: row[0].rating,
+            category: row[0].category,
+            image: row[0].image,
+            stock: row.stock,
+            description: row.description
+        });
     });
 });
 
@@ -154,14 +164,15 @@ app.post('/signup', function(req, res) {
     if (pass.length < 8) res.status(400).send('Passwords need to be at least 8 characters in length');
     connection.query('INSERT INTO user(iduser, psswrd) values (?, ?);', [user, pass], function(err, results, fields) {
         if (err) throw err;
-        req.session.loggedin = true;
-        req.session.username = user;
+        req.session.loggedin = false;
+        req.session.username = undefined;
         res.redirect('/');
     });
     // res.end();
 })
 
 app.post('/signout', function(req,res) {
+    console.log('signout post')
     req.session.loggedin = false;
     req.session.username = undefined;
     res.redirect('/');

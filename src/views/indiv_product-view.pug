@@ -1,4 +1,5 @@
 include includes/product-card.pug
+include includes/navbar
 html(lang="en")
   head
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
@@ -14,7 +15,7 @@ html(lang="en")
   body(class="hln-background")
     button(onclick="topButton()" id="toTopButton" title="Go to top")
         img(src="img/arrow-collapse-up.png" width="50%" height="50%")
-    div(class="navbar-container")
+    navbar(username)
     br
     table(width="100%" class="font")
       tbody
@@ -45,30 +46,8 @@ html(lang="en")
                                 font(style="font-size:60px")
                                     br
                                     br
-                                    div $
-                                        
-                                        if(price==25)
-                                            strong 25.00
-                                        if(price==14.5)
-                                            strong 14.50
-                                        if(price==15)
-                                            strong 15.00
-                                        else if(price==11.5)
-                                            strong 11.50
-                                        if(price==20)
-                                            strong 20.00
-                                        if(price==23.4)
-                                            strong 23.40
-                                        if(price==18.35)
-                                            strong 18.35
-                                        if(price==10.35)
-                                            strong 10.35
-                                        if(price==50.35)
-                                            strong 50.35
+                                    div $!{price.toFixed(2)}
                                        
-                                        
-
-                        
                         tr(height="10%")
                           td
                         
@@ -94,12 +73,11 @@ html(lang="en")
                 tr(height="5%")
                   td
                     font(size="+7")
-                        strong(id="product")= name 
+                        strong(id="product") !{name}
               
                 tr(height="5%")
                   td
-                    img(src="img/stars.png")
-                    font(face="calibri") (234 reviews)
+                    font(face="calibri") !{rating.toFixed(1)}/5.0
                 tr
                   td
                     p
