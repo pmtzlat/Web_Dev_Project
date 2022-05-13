@@ -61,7 +61,7 @@ function filterOnClick() {
   const manufacturer = document.getElementById('manufacturer');
   const rating = document.querySelector('input[name="rev"]:checked');
   const price = document.getElementById('price');
-  console.log([manufacturer, rating, price]);
+  
   manufacturer
   const manufacturerValue = (manufacturer.value && manufacturer.value != '') ? manufacturer.value : 'all';
   const ratingValue = rating ? rating.value : 0;

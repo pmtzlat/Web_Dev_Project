@@ -30,7 +30,7 @@ app.use(session({
 app.get('/', function(req, res) {
     connection.query('SELECT * FROM product;' , function(err, rows, fields) {
         if (err) throw err;
-        res.render('products-view', { title: 'Home', products: rows });
+        res.render('products-view', { title: 'Home', products: rows, username: req.session.username });
     });
 });
 
@@ -48,7 +48,6 @@ app.get('/product/:product', function(req, res) {
     
     connection.query('SELECT * FROM product WHERE name = ?;', [product], function(err, row, fields) {
         if (err) throw err;
-        console.log(row[0].price)
         res.render('indiv_product-view', { title: 'Product', name : row[0].name, price : row[0].price , category: row[0].category, image: row[0].image,
      stock: row.stock, description: row.description});
     });
@@ -78,10 +77,18 @@ app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
         priceQuery = '1=1';
     
     const statement = `SELECT * FROM product WHERE ${manufacturerQuery} AND ${ratingQuery} AND ${priceQuery};`;
-    console.log(statement);
     connection.query(statement, function(err, rows, fields) {
         if (err) throw err;
-        res.render('products-view', { title: 'Filter', products: rows });
+        res.render('products-view', { title: 'Filter', products: rows, username: req.session.username });
+    });
+});
+
+app.get('/search/:term', function(req, res) {
+    const term = req.params.term;
+    const statement = `SELECT * FROM product WHERE name LIKE '%${term}%';`;
+    connection.query(statement, function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Search', products: rows, username: req.session.username });
     });
 });
 

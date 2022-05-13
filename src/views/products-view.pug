@@ -11,13 +11,17 @@ html(lang="en")
         script(src='/js/navbar-footer.js' defer)
         script(src='/js/filter.js' defer)
     body(class='hln-background')
-        button(onclick='topButton()' id='toTopButton' title='Go to top')
-            img(src='/img/arrow-collapse-up.png' width='50%' height='50%')
-
         navbar(username)
 
+        button(onclick='topButton()' id='toTopButton' title='Go to top')
+                img(src='/img/arrow-collapse-up.png' width='50%' height='50%')
+        
         center
-            img(src='/img/logo.JPG' width="auto" height="300px" style="border-radius: 30%")
+            if title == 'Home'
+                img(src='/img/logo.JPG' width="auto" height="300px" style="border-radius: 30%")
+            else 
+                img(src="/img/logo.JPG" class="hln-logo-sm" width="auto" height="100px")
+                h1(style='font-family: Montserrat') !{title}
         br
         
         table(class='font' width='100%')
