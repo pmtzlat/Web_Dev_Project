@@ -39,8 +39,7 @@ app.get('/category/:category', function(req, res) {
     const id = params.category.substring(0, params.category.length - 1);
     connection.query('SELECT * FROM product WHERE category = ?;', [id], function(err, rows, fields) {
         if (err) throw err;
-        console.log(rows);
-        res.render('products-view', { title: 'Category', products: rows });
+        res.render('products-view', { title: 'Category', products: rows, username: req.session.username });
     });
 });
 
@@ -49,16 +48,27 @@ app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
     let manufacturer = params.manufacturer;
     let rating = params.rating;
     let price = params.price;
+    
+    let manufacturerQuery = '';
+    let ratingQuery = '';
+    let priceQuery = '';
 
-    const manufacturerQuery = manufacturer ? `AND manufacturer = '${manufacturer}'` : '';
-    const ratingQuery = rating ? `AND rating >= ${rating}` : '';
-    const priceQuery = price ? `AND price <= ${price}` : '';
-
-    if (typeof manufacturer != 'string') manufacturer = undefined;
-    if (typeof rating != 'number') rating = undefined;
-    if (typeof price != 'number') price = undefined;
-
-    connection.query(`SELECT * FROM product WHERE 1=1 ${priceQuery} ${manufacturerQuery} ${ratingQuery};`, function(err, rows, fields) {
+    // Build query
+    (typeof manufacturer != 'string' ||  manufacturer == 'all') ?
+        manufacturerQuery = '1=1':
+        manufacturerQuery = `manufacturer = '${manufacturer}'`;
+    
+    (isNaN(rating) || rating == 0) ?
+        ratingQuery = '1=1':
+        ratingQuery = `rating >= ${rating}`;
+    
+    (!isNaN(price)) ?
+        priceQuery = `price <= ${price}`:
+        priceQuery = '1=1';
+    
+    const statement = `SELECT * FROM product WHERE ${manufacturerQuery} AND ${ratingQuery} AND ${priceQuery};`;
+    console.log(statement);
+    connection.query(statement, function(err, rows, fields) {
         if (err) throw err;
         res.render('products-view', { title: 'Filter', products: rows });
     });

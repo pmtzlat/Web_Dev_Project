@@ -3,7 +3,7 @@ function getManufacturersOptions() {
     let mansHtml = '';
 
     for (i = 0; i < mans.length; i++) {
-        mansHtml += `<option>${mans[i]}</option>\n`
+        mansHtml += `<option value=${mans[i]}>${mans[i]}</option>\n`
     }
     return mansHtml;
 }
@@ -19,7 +19,7 @@ function displayFilterBar() {
             <input class="forminput" type="text" id="price" size="10" maxlength="30" placeholder="Ex. $200" style="margin-left:12px;width:60px"><br><br>
             <label for="manufacturer">Manufacturer: </label>
             <select class="forminput" id="manufacturer" style="margin-left:30px">
-
+              <option></option>
               ${getManufacturersOptions()}
             </select>
             <br><br>
@@ -63,9 +63,9 @@ function filterOnClick() {
   const price = document.getElementById('price');
   console.log([manufacturer, rating, price]);
   manufacturer
-  const manufacturerValue = manufacturer ? manufacturer.value : '';
-  const ratingValue = rating ? rating.value : '';
-  const priceValue = price ? price.value : '';
+  const manufacturerValue = (manufacturer.value && manufacturer.value != '') ? manufacturer.value : 'all';
+  const ratingValue = rating ? rating.value : 0;
+  const priceValue = price ? price.value : 0;
 
   window.location.href = `/filter/${manufacturerValue}/${rating ? `${ratingValue}` : 0}/${(price && priceValue >= 0) ? `${priceValue}` : 0}`;
 }

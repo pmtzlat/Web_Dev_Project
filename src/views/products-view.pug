@@ -1,4 +1,5 @@
-include includes/product-card.pug
+include includes/product-card
+include includes/navbar
 doctype html
 html(lang="en")
     head 
@@ -13,7 +14,7 @@ html(lang="en")
         button(onclick='topButton()' id='toTopButton' title='Go to top')
             img(src='/img/arrow-collapse-up.png' width='50%' height='50%')
 
-        div(class='navbar-container')
+        navbar(username)
 
         center
             img(src='/img/logo.JPG' width="auto" height="300px" style="border-radius: 30%")
@@ -27,6 +28,7 @@ html(lang="en")
                     td(width='1px' height='500px' bgcolor='black')
                     if products.length == 1
                         td( width="30%" valign="top")
+                            - product = products[0];
                             +card(product.name, product.price, product.image, product.rating)
                         td(width="70%")
                     else 

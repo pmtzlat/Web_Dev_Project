@@ -1,0 +1,79 @@
+mixin(username)
+    link(rel="/css/Pablo%20CSS.css")
+    div(class="navbar-container")
+        table(class="navbar" width="100%" cellspacing="0" cellpadding="0" border="0")
+            tr
+                td(class="icon" width="5%")
+                    center
+                        img(
+                            src="/img/home.svg"
+                            width="25px"
+                            height="auto"
+                            padding="10px"
+                        )
+
+                if (!username) 
+                    td(class="icon" width="5%")
+                        a(href="/login")
+                            center
+                                img(src="/img/account-circle.svg" alt="Log in")
+                    td(width="24%")
+                else 
+                    td(id="signout" class="icon" width="5%" style="cursor:pointer;")
+                        center
+                            img(src="/img/location-exit.svg" alt="Log out")
+                                        
+                            
+                            td(width="10%" style="font-family: 'Sans-serif';")
+                                center
+                                    p Hello, !{username}
+                            td(width="14%")
+                
+                td(width="30%")
+                    table(width="100%")
+                        tr(height="30px")
+                            td
+                                input(class="searchbar"
+                                    type="text"
+                                    id="name"
+                                    size="30"
+                                    maxlength="30"
+                                    align="middle"
+                                    placeholder="Search product..."
+                                    border="0"
+                                    onkeypress="keyPress(event)"
+                                )
+
+                td(width="auto" align="right")
+                td(class="icon" width="5%")
+                        center
+                            a(href="/settings-account")
+                                img(src="img/account-cog.svg" alt="Settings")
+                            
+                            td(class="icon" width="5%")
+                                center
+                                    a(href="/cart")
+                                    img(src="img/cart.svg" alt="Cart")
+                                
+        table(class="categories hln-background" cellspacing="15px")
+            tbody 
+                tr(height="30px")
+                    td(width="15%")
+                    td(class="category_button" width="15%") 
+                        a(href="/category/Sensors")
+                            center
+                                p Sensors
+                    td(class="category_button" width="15%")
+                        a(href="/category/Motors")
+                            center
+                                p Motors
+                    td(class="category_button" width="15%")
+                        a(href="/category/Microprocessors")
+                            center
+                                p Microprocessors
+                    td(class="category_button" width="15%")
+                        a(href="/category/Tools")
+                            center
+                                p Tools
+                    td(width="15%")
+        br 
