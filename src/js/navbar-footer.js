@@ -6,6 +6,10 @@ function keyPress(e) {
 
 function search(term) {
   window.location.href = '/search/' + term;
+    if (e.keyCode == 13) {
+        inpt = document.getElementById('name').value;
+        search(inpt);
+    }
 }
 
 function displayNavbar() {
@@ -128,7 +132,7 @@ function displayFooter() {
                 <!-- Footer column 1 -->
                 <h3>Company Information</h3>
                 <ul>
-                    <li><a href="/about">About Robostore</a></li>
+                    <li><a href="/aboutme">About Robostore</a></li>
                     <li><a href="/faq">FAQ</a></li>
                     <li><a>Careers</a></li>
                 </ul>

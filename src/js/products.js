@@ -11,6 +11,4 @@ carts.addEventListener("click", () => {
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.send(JSON.stringify({ product: prod, image: document.getElementById('product-image').src }));
-
-    
 })
