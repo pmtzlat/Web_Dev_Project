@@ -1,0 +1,83 @@
+include includes/navbar
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Cart
+        link(rel="stylesheet" href="/css/Pablo CSS.css")
+        link(rel="stylesheet" href="/css/Ethan.css")
+        script(src="/js/cart.js" async)
+        script(src="/js/navbar-footer.js" defer)
+    style(type="text/css").
+        td, h6 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        text-lg {
+            font-size: large;
+                }
+
+        checkout-button {
+            background-color: black;
+            font-size: large;
+            padding: 10px;
+        }
+
+    body(class="hln-background")
+        navbar(username)
+
+        table(width="80%" style="margin:auto")
+            tr
+                td(width="20%")
+                    h2 Shopping Cart
+
+
+                td(width="20%")
+                td(width="10%")
+                    h2 Price
+
+        table(width="100%")
+            tr
+                    //- !-- Left gutter --
+                    td(width="10%")
+                    //- !-- Inner table, Lays out cart --
+
+                    td(width="80%" class="cart-items")
+                        each item in cart
+                            table(class="cart-row" width="100%" style="margin-bottom:20px; background-color:lightgray; border-radius: 25px;")
+
+                                tr
+
+                                    td(width="20%")
+                                        img(
+                                            src=item.image
+                                            width="200"
+                                            alt=item.item
+                                            style="border-radius:20px"
+                                            )
+                                        br
+
+                                    td(width="60%")
+                                        p(style="font-size:larger;font-weight:bold") !{item.title}
+                                        input(class="cart-quantity-input" type="number" value="${item.inCart}" size="10" id="item2quantity" style="width:50px;border-radius:3px")
+
+                                    td
+                                        span(class="cart-price" style="font-weight:bolder") $!{item.price}
+                                    td
+                                        button(class="rem" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width:100px") Remove
+                    //- !-- Right gutter --
+                    td(width="10%")
+
+
+        table(width="80%" style="margin:auto")
+            tr
+                td(width="60%")
+                td(width="10%")
+
+                    h6(class="text-lg") Subtotal: 
+                    div(class="cart-total-price") $--
+
+
+                td(width="10%")
+                    h6 
+                        a(class="checkout-button" href="checkout") Checkout

@@ -37,7 +37,9 @@ DROP TABLE IF EXISTS `mydb`.`product` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `name` VARCHAR(100) NOT NULL,
-  `price` DOUBLE NOT NULL DEFAULT 0,
+  `manufacturer` VARCHAR(100) NOT NULL,
+  `rating` DOUBLE NOT NULL,
+  `price` DECIMAL(6,2) NOT NULL DEFAULT 0,
   `category` VARCHAR(45) NULL,
   `image` VARCHAR(500) NULL,
   `stock` INT NOT NULL DEFAULT 0,
@@ -57,7 +59,8 @@ DROP TABLE IF EXISTS `mydb`.`relation` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`relation` (
   `user` VARCHAR(15) NOT NULL,
   `item` VARCHAR(45) NOT NULL,
-  `quantity` INT(3) UNSIGNED NOT NULL,
+  `price` DECIMAL(6,2) NOT NULL DEFAULT 0,
+  `image` VARCHAR(500) NULL,
   PRIMARY KEY (`user`, `item`),
   INDEX `nameitem_idx` (`item` ASC) VISIBLE,
   CONSTRAINT `iduser`
@@ -81,15 +84,15 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO user (iduser, psswrd) VALUES ('Demo1', 'd3mo1'), ('Demo2', 'd3mo2');
 
-INSERT INTO product (name, price, category, image, stock, weight, description, height) 
+INSERT INTO product (name, manufacturer, rating, price, category, image, stock, weight, description, height) 
 VALUES 
-('4G-Raspberry-Pi-4', 25.00, 'Microprocessor', 'https://cdn.sparkfun.com/r/500-500/assets/parts/1/4/0/2/2/15447-Raspberry_Pi_4_Model_B__4_GB_-01.jpg', 300,  12.5, 'Lorem ipsum', 22.3),
-('Arduino Nano', 14.50, 'Microprocessor', 'https://www.twinschip.com/image/cache/catalog/Products%20Twins%20Chip%20Store%202020/DEVELOPER%20BOARDS/Arduino/Arduino%20Nano%20V3.0/Arduino%20Nano%20V3.0%20Twins%20Chip%201-425x425.jpg', 150,  4.3, 'Lorem ipsum', 2.3),
-('Arduino Starter Kit', 50.35, 'Microprocessor', 'https://m.media-amazon.com/images/I/818V0uRvnrL._AC_SL1500_.jpg', 50,  20, 'Lorem ipsum', 40),
-('RP4020 Microcontroller Kit', 10.35, 'Microprocessor', 'https://www.raspberrypi.org/app/uploads/2021/01/17717-SparkFun-Pro-Micro-RP2040-01-500x500.jpg', 122,  22.5, 'Lorem ipsum', 11.37),
-('iFlight Beast F7 Drone Controller Board', 15.00, 'Microprocessor', 'https://images-na.ssl-images-amazon.com/images/I/41hEKfbBpxL.jpg', 230,  12.5, 'Lorem ipsum', 5.6),
-('Victor BB Motor Controller', 23.40, 'Motor', 'https://www.ampflow.com/controllers/vex/HV.jpg', 111,  3.5, 'Lorem ipsum', 4),
-('Solo 60 Motor Controller', 11.50, 'Motor', 'https://cdn11.bigcommerce.com/s-eem7ijc77k/images/stencil/original/products/1652/25581/IMC410__72335.1577981496.jpg?c=2', 35,  2.1, 'Lorem ipsum', 1.5),
-('M27-150-P Motor', 18.35, 'Motor', 'https://m.media-amazon.com/images/I/61NXZU-kcaL._SL1200_.jpg', 35,  5.2, 'Lorem ipsum', 2.1),
-('TS100 Smart Soldering Iron', 20.00, 'Tool', 'https://m.media-amazon.com/images/I/517hkMdTmmL._AC_SS450_.jpg', 120, 4.3, 'Lorem ipsum', 3.5)
+('4G-Raspberry-Pi-4', 'Raspberry Pi', 4.5, 25.00, 'Microprocessor', 'https://cdn.sparkfun.com/r/500-500/assets/parts/1/4/0/2/2/15447-Raspberry_Pi_4_Model_B__4_GB_-01.jpg', 300,  12.5, 'Lorem ipsum', 22.3),
+('Arduino Nano', 'Arduino', 4.3, 14.50, 'Microprocessor', 'https://www.twinschip.com/image/cache/catalog/Products%20Twins%20Chip%20Store%202020/DEVELOPER%20BOARDS/Arduino/Arduino%20Nano%20V3.0/Arduino%20Nano%20V3.0%20Twins%20Chip%201-425x425.jpg', 150,  4.3, 'Lorem ipsum', 2.3),
+('Arduino Starter Kit', 'Arduino', 4.8, 50.35, 'Microprocessor', 'https://m.media-amazon.com/images/I/818V0uRvnrL._AC_SL1500_.jpg', 50,  20, 'Lorem ipsum', 40),
+('RP4020 Microcontroller Kit', 'Raspberry Pi', 3.8, 10.35, 'Microprocessor', 'https://www.raspberrypi.org/app/uploads/2021/01/17717-SparkFun-Pro-Micro-RP2040-01-500x500.jpg', 122,  22.5, 'Lorem ipsum', 11.37),
+('iFlight Beast F7 Drone Controller Board', 'iFlight', 4.6, 15.00, 'Microprocessor', 'https://images-na.ssl-images-amazon.com/images/I/41hEKfbBpxL.jpg', 230,  12.5, 'Lorem ipsum', 5.6),
+('Victor BB Motor Controller', 'VEXPro', 3.9, 23.40, 'Motor', 'https://www.ampflow.com/controllers/vex/HV.jpg', 111,  3.5, 'Lorem ipsum', 4),
+('Solo 60 Motor Controller', 'RoboClaw', 3.5, 11.50, 'Motor', 'https://cdn11.bigcommerce.com/s-eem7ijc77k/images/stencil/original/products/1652/25581/IMC410__72335.1577981496.jpg?c=2', 35,  2.1, 'Lorem ipsum', 1.5),
+('M27-150-P Motor', 'AmpFlow', 3.8, 18.35, 'Motor', 'https://m.media-amazon.com/images/I/61NXZU-kcaL._SL1200_.jpg', 35,  5.2, 'Lorem ipsum', 2.1),
+('TS100 Smart Soldering Iron', 'UY CHAN', 4.3, 20.00, 'Tool', 'https://m.media-amazon.com/images/I/517hkMdTmmL._AC_SS450_.jpg', 120, 4.3, 'Lorem ipsum', 3.5)
 ;

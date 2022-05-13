@@ -1,0 +1,112 @@
+include includes/product-card.pug
+include includes/navbar
+html(lang="en")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Product
+    link(rel="stylesheet" href="/css/Pablo CSS.css")
+    link(rel="stylesheet" href="/css/Ethan.css")
+    link(href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet')
+    script(src="/js/totopbutton.js" defer)
+    script(src="/js/navbar-footer.js" img-src="img" html-dir-src="" css-src="css/footer.css" defer)
+    script(src="/js/products.js" defer)
+
+  body(class="hln-background")
+    button(onclick="topButton()" id="toTopButton" title="Go to top")
+        img(src="/img/arrow-collapse-up.png" width="50%" height="50%")
+    navbar(username)
+    br
+    table(width="100%" class="font")
+      tbody
+        tr(valign="top")
+          td(width="6%")
+          
+          td(width="20%" valign="top")
+                
+                   
+         
+          td(width="1px" bgcolor="black" height="500px")
+          td(width="5%")
+          
+          td(height="100%")
+            br
+            table(width="100%" height="60%")
+              tbody
+                tr(height="30%" width="100%" valign="top")
+                  td(width="60%")  
+                    img(id='product-image' src=image width="80%")
+                  
+                  td
+                    table(width="100%" height="100%")
+                      tbody
+                        tr
+                          td
+                            center
+                                font(style="font-size:60px")
+                                    br
+                                    br
+                                    div $!{price.toFixed(2)}
+                                       
+                        tr(height="10%")
+                          td
+                        
+                        tr(style="cursor: pointer;" bgcolor="orange" height="10%")
+                          td(class="addtocart" width="800%")
+                            a(class="add-cart" id="button" height="100%")
+                              center Add to cart
+                        
+                        tr(height="5%")
+                          td
+                        
+                        tr(bgcolor="green" height="15%")
+                          td(class="addtocart" width="800%" id="button" style="font-size:30px")
+                            a(href="/../checkout")
+                              center
+                                strong Buy Now
+                        tr(height="50%")
+                          td
+                  
+                  td(width="5%")
+                
+                
+                tr(height="5%")
+                  td
+                    font(size="+7")
+                        strong(class="product") !{name}
+              
+                tr(height="5%")
+                  td
+                    font(face="calibri") !{rating.toFixed(1)}/5.0
+                tr
+                  td
+                    p
+                        font(face="calibri") Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        
+                      
+               
+                tr(height="50px")
+                  td
+                
+            
+            h1
+                font(face="calibri") If you like this you'll love...
+            
+            
+          
+          td(width="5%" height="100%")
+            img(src="img/banner-ad.png" width="100%")
+        
+     
+    center
+      table
+        tbody
+          tr(height="150px")
+            td
+          
+          tr
+          tr(height="150px")
+            td
+          
+    div(class="footer-container")

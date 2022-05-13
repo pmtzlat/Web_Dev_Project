@@ -2,14 +2,6 @@ const signin = document.getElementById('signin');
 
 let username = localStorage.getItem('username');
 
-function loginFlow() {
-    let user = document.getElementById('username').value;
-    if (user != '') {
-        localStorage.setItem('username', user);
-        location.reload();
-    }
-}
-
 function signout() {
     username = '';
     localStorage.removeItem('username');

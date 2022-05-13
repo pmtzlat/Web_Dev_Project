@@ -1,52 +1,5 @@
-displayCart()
-function displayCart(){
-    let cartItems = localStorage.getItem("productsInCart")
-    cartItems = JSON.parse(cartItems)
-    let productContainer = document.querySelector(".products-container")
-    if(cartItems && productContainer){
-        productContainer.innerHTML = "";
-        console.log(localStorage.cartItems)
-        
-        Object.values(cartItems).map(item =>{
-            productContainer.innerHTML += 
-            `
-            <table class="cart-row" width="100%" style="margin-bottom:20px; background-color:lightgray; border-radius: 25px;">
-              
-              <tr>
-                
-                <td width="20%">
-                  <img
-                    src="${item.picture}"
-                    width="200"
-                    alt="Arduino Starter Kit"
-                    style="border-radius:20px"
-                    />
-                  <br />
-                </td>
-                <td width="60%">
-                  <p style="font-size:larger;font-weight:bold">${item.title}</p><br />
-                  <label for="item2quantity">Quantity</label>
-                  <input class="cart-quantity-input" type="number" value="${item.inCart}" size="10" id="item2quantity" style="width:50px;border-radius:3px">
-                </td>
-                <td><span class="cart-price" style="font-weight:bolder">${item.price}</span></td>
-                <td>
-                  <button class="rem" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width:100px">
-                    Remove
-                  </button>
-                </td>
-              </tr>
-              
-            </table>
-            ` 
-        })
-        
-    }
-}
-
-if (document.readyState == "loading"){
-    document.addEventListener( "DOMContentLoaded", ready)
-} else {
-    ready()
+function setCart() {
+    localStorage.setItem('productsInCart', '{"4 GB Raspberry Pi 4":{"picture":"https://cdn.sparkfun.com/r/500-500/assets/parts/1/4/0/2/2/15447-Raspberry_Pi_4_Model_B__4_GB_-01.jpg","title":"4 GB Raspberry Pi 4","inCart":1,"price":20},"TS100 Smart Soldering Iron":{"picture":"https://m.media-amazon.com/images/I/517hkMdTmmL._AC_SS450_.jpg","title":"TS100 Smart Ironing","inCart":1,"price":20},"iFlight Beast F7 Drone Controller Board":{"picture":"https://images-na.ssl-images-amazon.com/images/I/41hEKfbBpxL.jpg","title":"iFlight Beast F7 Drone Controller Board","inCart":1,"price":20}}');
 }
     
 function ready(){

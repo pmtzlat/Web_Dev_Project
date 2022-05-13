@@ -1,0 +1,62 @@
+include includes/product-card
+include includes/navbar
+doctype html
+html(lang="en")
+    head 
+        title= title
+        link(rel='stylesheet' href='/css/Pablo CSS.css')
+        link(rel='stylesheet' href='/css/Ethan.css')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat')
+        script(src='/js/totopbutton.js' defer)
+        script(src='/js/navbar-footer.js' defer)
+        script(src='/js/filter.js' defer)
+    body(class='hln-background')
+        navbar(username)
+
+        button(onclick='topButton()' id='toTopButton' title='Go to top')
+                img(src='/img/arrow-collapse-up.png' width='50%' height='50%')
+        
+        center
+            if title == 'Home'
+                img(src='/img/logo.JPG' width="auto" height="300px" style="border-radius: 30%")
+            else 
+                img(src="/img/logo.JPG" class="hln-logo-sm" width="auto" height="100px")
+                h1(style='font-family: Montserrat') !{title}
+        br
+        
+        table(class='font' width='100%')
+            tbody 
+                tr 
+                    td(width='6%')
+                    td(class='filter-container' width='20%' valign='top')
+                    td(width='1px' height='500px' bgcolor='black')
+                    if products.length == 1
+                        td( width="30%" valign="top")
+                            - product = products[0];
+                            +card(product.name, product.price, product.image, product.rating)
+                        td(width="70%")
+                    else 
+                        td(valign="top")
+                                table(class='hln-background' style="border-radius:0 20px 20px 0" width="100%" cellspacing="25px")
+                                    tbody
+                                        if products.length == 0
+                                            tr
+                                                td 
+                                                    h1(style='font-size:20px; margin:30px; white-space:pre;')
+                                                        | Sorry, we are out of stock at the moment!
+                                                        | Restocks happen every 1st and 15th of each month.
+
+                                                    img(src='https://cdn3.iconfinder.com/data/icons/e-commerce-website-1/64/Out-of-stock-512.png' style='width:40%; margin-left:60px')
+
+                                        else
+                                            - for (let i = 0; i < products.length; i += 3) {
+                                                tr(height='30px')
+                                                tr(height='100px')
+                                                    //- Add 3 products to the row
+                                                    - for (let j = 0; j < 3; j++) {
+                                                        if (products[i + j])
+                                                            - const product = products[i + j]
+                                                            +card(product.name, product.price, product.image, product.rating)
+                                                    - }
+                                            - }
+        div(class='footer-container')

@@ -12,7 +12,10 @@ const connection = mysql.createConnection({
 });
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.engine('pug', require('pug').__express);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 app.use('/img', express.static(`${__dirname}/img`));
 app.use('/css', express.static(`${__dirname}/css`));
 app.use('/js', express.static(`${__dirname}/js`));
@@ -22,79 +25,98 @@ app.use(session({
     saveUninitialized: true
 }))
 
-// HTML ROUTES
+// HTML DYNAMIC ROUTES
+
 app.get('/', function(req, res) {
-    res.sendFile(`${__dirname}/index.html`);
-});
-
-app.get('/4GRaspberryPi4', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_4GBRaspberryPi4.html`);
-});
-
-app.get('/iFlightBeastF7DroneControllerBoard', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_iFlight Beast F7 Drone Controller Board.html`);
-});
-
-app.get('/TS100SmartSolderingIron', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_TS100 Smart Soldering Iron.html`);
-});
-
-app.get('/ArduinoNano', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_Arduino Nano.html`);
-});
-
-app.get('/Arduinostarterkit', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_Arduino starter kit.html`);
-});
-
-app.get('/M27-150-PMotor', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_M27-150-P Motor.html`);
-});
-
-app.get('/RP4020MicrocontrollerKit', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_RP4020 Microcontroller Kit.html`);
-});
-
-app.get('/Solo60MotorController', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_Solo 60 Motor Controller.html`);
-});
-
-app.get('/VictorBBMotorController', function(req, res) {
-    res.sendFile(`${__dirname}/product/product_Victor BB Motor Controller.html`);
-});
-
-app.get('/Microprocessors', function(req, res) {
-    res.sendFile(`${__dirname}/Microprocessors.html`);
-});
-
-app.get('/Motors', function(req, res) {
-    res.sendFile(`${__dirname}/Motors.html`);
-});
-
-app.get('/Tools', function(req, res) {
-    res.sendFile(`${__dirname}/Tools.html`);
-});
-
-app.get('/Sensors', function(req, res) {
-    res.sendFile(`${__dirname}/Sensors.html`);
-});
-
-app.get('/aboutme', function(req, res) {
-    res.sendFile(`${__dirname}/aboutme.html`);
-});
-
-app.get('/faq', function(req, res) {
-    res.sendFile(`${__dirname}/faq.html`);
-});
-
-
-
-app.get('/about', function(req, res) {
-    res.sendFile(`${__dirname}/aboutme.html`);
+    connection.query('SELECT * FROM product;' , function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Home', products: rows, username: req.session.username });
+    });
 });
 
 app.get('/cart', function(req, res) {
-    res.sendFile(`${__dirname}/cart.html`);
+    if (!req.session.username) {
+        res.redirect('/login');
+        return;
+    }
+    connection.query(`SELECT * FROM relation WHERE user = '${req.session.username}'`, function(err, rows, fields) {
+        if (err) throw err;
+        console.log(rows);
+        res.render('cart', { username: req.session.username, cart: rows });
+    });
+});
+
+app.get('/category/:category', function(req, res) {
+    const params = req.params;
+    const id = params.category.substring(0, params.category.length - 1);
+    connection.query('SELECT * FROM product WHERE category = ?;', [id], function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Category', products: rows, username: req.session.username });
+    });
+});
+
+app.get('/product/:product', function(req, res) {
+    const product = req.params.product;
+    
+    connection.query('SELECT * FROM product WHERE name = ?;', [product], function(err, row, fields) {
+        if (err) throw err;
+        res.render('indiv_product-view', { 
+            title: 'Product',
+            username: req.session.username,
+            name : row[0].name,
+            price : row[0].price, 
+            rating: row[0].rating,
+            category: row[0].category,
+            image: row[0].image,
+            stock: row.stock,
+            description: row.description
+        });
+    });
+});
+
+app.get('/filter/:manufacturer?/:rating?/:price?', function(req, res) {
+    const params = req.params;
+    let manufacturer = params.manufacturer;
+    let rating = params.rating;
+    let price = params.price;
+    
+    let manufacturerQuery = '';
+    let ratingQuery = '';
+    let priceQuery = '';
+
+    // Build query
+    (typeof manufacturer != 'string' ||  manufacturer == 'all') ?
+        manufacturerQuery = '1=1':
+        manufacturerQuery = `manufacturer = '${manufacturer}'`;
+    
+    (isNaN(rating) || rating == 0) ?
+        ratingQuery = '1=1':
+        ratingQuery = `rating >= ${rating}`;
+    
+    (!isNaN(price)) ?
+        priceQuery = `price <= ${price}`:
+        priceQuery = '1=1';
+    
+    const statement = `SELECT * FROM product WHERE ${manufacturerQuery} AND ${ratingQuery} AND ${priceQuery};`;
+    connection.query(statement, function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Filter', products: rows, username: req.session.username });
+    });
+});
+
+app.get('/search/:term', function(req, res) {
+    const term = req.params.term;
+    const statement = `SELECT * FROM product WHERE name LIKE '%${term}%';`;
+    connection.query(statement, function(err, rows, fields) {
+        if (err) throw err;
+        res.render('products-view', { title: 'Search', products: rows, username: req.session.username });
+    });
+});
+
+// HTML STATIC ROUTES
+
+app.get('/about', function(req, res) {
+    res.sendFile(`${__dirname}/aboutme.html`);
 });
 
 app.get('/checkout', function(req, res) {
@@ -113,20 +135,11 @@ app.get('/password-reset', function(req, res) {
     res.sendFile(`${__dirname}/password-reset.html`);
 });
 
-// if (req.session.loggedin){
-//     res.sendFile(`${__dirname}/cart.html/`);
-// } else {
-//     res.redirect('/login');
-// }
+app.get('/search', function(req, res) {
+    res.sendFile(`${__dirname}/filter.html`);
+})
 
-
-// TODO: dynamic routes
-
-// JS ROUTES
-
-// app.get('/js/navbar-footer.js', function(req, res) {
-//     res.sendFile('./js/navbar-footer.js');
-// })
+// POST ROUTES
 
 app.post('/auth', function(req, res) {
     const user = req.body.username;
@@ -151,51 +164,42 @@ app.post('/auth', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
-    const user = req.session.username;
-    const pass = req.session.password;
+    const user = req.body.username;
+    const pass = req.body.password;
 
     if (!user || !pass) res.status(400).redirect('/login');
     if (pass.length < 8) res.status(400).send('Passwords need to be at least 8 characters in length');
     connection.query('INSERT INTO user(iduser, psswrd) values (?, ?);', [user, pass], function(err, results, fields) {
         if (err) throw err;
+        req.session.loggedin = false;
+        req.session.username = undefined;
         res.redirect('/');
     });
-    res.end();
+    // res.end();
 })
+
+app.post('/signout', function(req,res) {
+    console.log('signout post')
+    req.session.loggedin = false;
+    req.session.username = undefined;
+    res.redirect('/');
+});
 
 app.post('/addcart', function(req, res) {
     const user = req.session.username;
+    const img = req.body.image;
     const prod = req.body.product;
-    if(!user){
+    if (!user) {
         res.redirect('/login');
     } else if (prod) {
-        connection.query(`INSERT INTO relation( user, item, quantity ) VALUES ("Demo1", "4G-Raspberry-Pi-4", 1);`, [user, prod], function(err, results ) {
+        connection.query(`INSERT INTO relation( user, item, price, image ) VALUES (?, ?, 20, ?);`, [user, prod, img], function(err) {
             if (err) throw err;
-           
-            res.redirect('/cart');
-
+            res.redirect('/cart');  
             res.end();
+
         });
     }
 });
- /* TODO: THIS IS FOR THE SEARCHBAR, ITS NOT FINISHED, BUT IN THEORY IT ACCESSES THE DATABASE 
-    AND RETRIEVES A PRODUCT IF THE USER INPUT IS THE EXACT PRODUCT NAME STORED IN THE DB
-
-app.post('/search', function(req, res) {
-    const userinpt = req.body.inpt;
-    console.log(userinpt)
-    connection.query(`SELECT * FROM PRODUCT WHERE (name = ?);`, [userinpt], function(err, results){
-        if (err) throw err;
-        console.log(results)
-
-    } )
-
-
-
-});
-*/
-    
-
 
 app.listen(3000);
 console.log('Listening on port 3000...')
